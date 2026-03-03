@@ -1,439 +1,1403 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=7.0000">
-    <meta name="keywords" content="Xiaofeng Zhang, zhang Xiaofeng, xiaofengzhang, zhangxiaofeng, sjtu, SJTU, Shanghai Jiao Tong University">
-    <meta name="generator" content="MSHTML 11.00.9600.17280">
-    <link rel="stylesheet" href="./jemdoc.css" type="text/css">
-    <title>Xiaofeng Zhang's Homepage</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Xiaofeng Zhang - Ph.D. Researcher at Shanghai Jiao Tong University, focusing on Multimodal Large Language Models, Hallucination Mitigation, and Embodied Intelligence">
+    <meta name="keywords" content="Xiaofeng Zhang, SJTU, Multimodal AI, LVLMs, Hallucination, Position Encoding, Embodied Intelligence">
+    <meta name="author" content="Xiaofeng Zhang">
+    <meta property="og:title" content="Xiaofeng Zhang | Multimodal AI Researcher @ SJTU">
+    <meta property="og:description" content="Ph.D. student at Shanghai Jiao Tong University. Research: Multimodal LLMs, Hallucination Mitigation, Visual Reasoning.">
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://zhangbaijin.github.io/">
+    <meta name="twitter:card" content="summary">
+    <link rel="canonical" href="https://zhangbaijin.github.io/">
     
-    <!-- 内联样式优化排版 -->
-    <style type="text/css">
-        /* 全局优化 */
-        body { line-height: 1.6; font-size: 15px; }
-        #layout-content { max-width: 1100px; margin: 25px auto; padding: 0 20px; }
-        
-        /* 头部信息排版 */
-        #toptitle h1 { margin: 0 0 8px 0; line-height: 1.2; }
-        .header-info { margin: 8px 0; color: #333; }
-        .header-info a { color: #1a5276; text-decoration: none; }
-        .header-info a:hover { text-decoration: underline; }
-        .header-links { margin-top: 10px; }
-        .header-links a { margin-right: 12px; color: #16a085; }
-        
-        /* 头像优化 */
-        .profile-photo { 
-            width: 300px; 
-            border-radius: 8px; 
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            display: block;
-            margin: 0 auto;
+    <!-- 学术字体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    
+    <!-- jemdoc基础样式（可选，若不需要可删除） -->
+    <link rel="stylesheet" href="./jemdoc.css" type="text/css">
+    
+    <title>Xiaofeng Zhang | Multimodal AI Researcher @ SJTU</title>
+    
+    <style>
+        /* ==================== CSS Variables ==================== */
+        :root {
+            /* 主色调：学术深蓝 */
+            --primary: #1a365d;
+            --primary-dark: #0d2137;
+            --primary-light: #2c5282;
+            --accent: #2b6cb0;
+            --accent-hover: #2a4365;
+            
+            /* 中性色 */
+            --text-main: #1a202c;
+            --text-secondary: #4a5568;
+            --text-muted: #718096;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-tertiary: #edf2f7;
+            --border: #e2e8f0;
+            --border-hover: #cbd5e1;
+            
+            /* 语义色 */
+            --success: #276749;
+            --success-light: #c6f6d5;
+            --warning: #b7791f;
+            --warning-light: #fef3c7;
+            --danger: #c53030;
+            --danger-light: #fed7d7;
+            
+            /* 效果 */
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+            --radius: 10px;
+            --radius-sm: 6px;
+            --radius-lg: 16px;
+            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
-        /* News滚动区域优化 */
-        .news-container { 
-            height: 180px; 
-            overflow-y: auto; 
-            border: 1px solid #e0e0e0;
+        /* 暗色模式 */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-main: #f1f5f9;
+                --text-secondary: #cbd5e1;
+                --text-muted: #94a3b8;
+                --bg-primary: #0f172a;
+                --bg-secondary: #1e293b;
+                --bg-tertiary: #334155;
+                --border: #334155;
+                --border-hover: #475569;
+                --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.3);
+                --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.4);
+            }
+        }
+        
+        /* ==================== 全局重置 ==================== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 16px;
+            line-height: 1.75;
+            color: var(--text-main);
+            background: var(--bg-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* 学术衬线字体用于标题 */
+        h1, h2, h3, h4, .serif {
+            font-family: 'IBM Plex Serif', Georgia, 'Times New Roman', serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: var(--text-main);
+        }
+        
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        a:hover { color: var(--accent-hover); }
+        a:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
             border-radius: 4px;
-            padding: 10px 15px;
-            background: #fafafa;
-            margin: 10px 0;
-        }
-        .news-container ul { 
-            margin: 0; 
-            padding-left: 20px; 
-            list-style-type: disc;
-        }
-        .news-container li { 
-            margin: 6px 0; 
-            padding-left: 4px;
-            font-size: 14px;
-        }
-        .news-container a { color: #2980b9; text-decoration: none; }
-        .news-container a:hover { text-decoration: underline; }
-        
-        /* 章节标题优化 */
-        h2 { 
-            color: #2c3e50; 
-            border-bottom: 2px solid #3498db; 
-            padding-bottom: 6px; 
-            margin: 35px 0 15px 0;
-            font-size: 20px;
         }
         
-        /* About/Biography列表优化 */
-        .bio-list { 
-            list-style: none; 
-            padding: 0; 
-            margin: 10px 0; 
+        img { max-width: 100%; height: auto; display: block; }
+        
+        /* ==================== 布局容器 ==================== */
+        #layout-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
         }
-        .bio-list li { 
-            padding: 5px 0; 
-            padding-left: 20px; 
+        
+        @media (min-width: 768px) {
+            #layout-content { padding: 3rem 2rem; }
+        }
+        
+        /* ==================== Hero Section ==================== */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: white;
+            padding: 2.5rem 2rem;
+            border-radius: var(--radius-lg);
+            margin-bottom: 2.5rem;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(43,108,176,0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 2rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-avatar {
             position: relative;
         }
-        .bio-list li::before {
+        .avatar-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid rgba(255,255,255,0.3);
+            object-fit: cover;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+        }
+        .avatar-img:hover {
+            transform: scale(1.03);
+            border-color: rgba(255,255,255,0.6);
+        }
+        .avatar-badge {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            background: var(--accent);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .hero-name {
+            font-size: 2.3rem;
+            margin: 0 0 0.4rem 0;
+            color: white;
+            line-height: 1.2;
+        }
+        .name-pronunciation {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: rgba(255,255,255,0.85);
+            font-style: italic;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+        .hero-title {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.95);
+            margin: 0.5rem 0 1rem 0;
+            font-weight: 400;
+        }
+        .hero-affiliation {
+            color: rgba(255,255,255,0.9);
+            margin: 0 0 1.2rem 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+        .hero-affiliation svg {
+            width: 18px;
+            height: 18px;
+            opacity: 0.9;
+        }
+        
+        .hero-quote {
+            font-style: italic;
+            color: rgba(255,255,255,0.85);
+            margin: 0 0 1.5rem 0;
+            padding-left: 1rem;
+            border-left: 3px solid rgba(255,255,255,0.4);
+            font-size: 1.05rem;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 1.8rem;
+            margin: 0 0 1.5rem 0;
+            flex-wrap: wrap;
+        }
+        .stat-item {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 75px;
+            padding: 8px 12px;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+        }
+        .stat-item:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        .stat-num {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #60a5fa;
+            line-height: 1;
+        }
+        .stat-label {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            margin-top: 4px;
+        }
+        
+        .hero-links {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .btn {
+            padding: 11px 22px;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+        }
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+            box-shadow: var(--shadow-md);
+        }
+        .btn-primary:hover {
+            background: #f8fafc;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.7);
+        }
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: white;
+            transform: translateY(-2px);
+        }
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+        .social-link:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            border-color: rgba(255,255,255,0.5);
+        }
+        
+        /* ==================== Section 通用样式 ==================== */
+        section { margin: 2.5rem 0; }
+        h2 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 0.6rem;
+            margin: 2.5rem 0 1.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        h2::before {
+            content: '';
+            width: 6px;
+            height: 24px;
+            background: var(--accent);
+            border-radius: 3px;
+        }
+        
+        /* ==================== News 滚动区域 ==================== */
+        .news-container {
+            height: 200px;
+            overflow-y: auto;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1rem 1.25rem;
+            background: var(--bg-secondary);
+            margin: 1rem 0;
+        }
+        .news-container ul {
+            margin: 0;
+            padding-left: 1.5rem;
+            list-style-type: none;
+        }
+        .news-container li {
+            margin: 10px 0;
+            padding-left: 24px;
+            position: relative;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .news-container li::before {
             content: "•";
-            color: #3498db;
+            color: var(--accent);
             font-weight: bold;
             position: absolute;
-            left: 0;
+            left: 8px;
+            top: 2px;
+            font-size: 1.3rem;
         }
-        
-        /* 论文列表排版 */
-        .pub-table { width: 100%; border-collapse: collapse; margin: 15px 0; }
-        .pub-row { vertical-align: top; }
-        .pub-row td { padding: 10px 0; }
-        .pub-image { 
-            width: 260px; 
-            height: 120px; 
-            object-fit: cover; 
-            border-radius: 4px;
-            border: 1px solid #eee;
+        .news-container strong {
+            color: var(--primary);
+            font-weight: 600;
         }
-        .pub-title { 
-            font-weight: 600; 
-            margin: 0 0 6px 0; 
-            font-size: 15px;
-        }
-        .pub-title a { 
-            color: #2980b9; 
-            text-decoration: none; 
-        }
-        .pub-title a:hover { text-decoration: underline; }
-        .pub-authors { margin: 4px 0; color: #333; font-size: 14px; }
-        .pub-venue { font-style: italic; color: #666; margin: 4px 0; font-size: 14px; }
-        .pub-links { margin-top: 8px; }
-        .pub-links a { 
-            color: #16a085; 
-            margin-right: 14px; 
+        .news-container a {
+            color: var(--accent);
             text-decoration: none;
-            font-size: 14px;
         }
-        .pub-links a:hover { text-decoration: underline; }
-        .pub-separator { height: 12px; }
+        .news-container a:hover {
+            text-decoration: underline;
+        }
+        /* 滚动条美化 */
+        .news-container::-webkit-scrollbar { width: 6px; }
+        .news-container::-webkit-scrollbar-track { background: var(--bg-tertiary); border-radius: 3px; }
+        .news-container::-webkit-scrollbar-thumb { background: var(--border-hover); border-radius: 3px; }
+        .news-container::-webkit-scrollbar-thumb:hover { background: var(--accent); }
         
-        /* Awards/Services排版 */
-        .awards-list, .services-list { 
-            list-style: none; 
-            padding: 0; 
-            margin: 10px 0; 
+        /* ==================== Research Tags ==================== */
+        .research-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 1rem 0 2rem 0;
         }
-        .awards-list li { 
-            padding: 6px 0; 
-            padding-left: 24px; 
+        .tag {
+            padding: 7px 16px;
+            border-radius: 24px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            cursor: default;
+        }
+        .tag:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+        .tag-primary {
+            background: rgba(43, 108, 176, 0.12);
+            color: var(--accent);
+            border-color: rgba(43, 108, 176, 0.35);
+            font-weight: 600;
+        }
+        
+        /* ==================== Biography List ==================== */
+        .bio-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        .bio-list li {
+            padding: 10px 0 10px 28px;
             position: relative;
+            border-left: 2px solid var(--border);
+            margin-left: 10px;
+        }
+        .bio-list li::before {
+            content: "";
+            position: absolute;
+            left: -6px;
+            top: 18px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid var(--bg-primary);
+        }
+        .bio-list li:last-child {
+            border-left-color: transparent;
+        }
+        .bio-list strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        /* ==================== Publication Cards ==================== */
+        .pub-card {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 1.75rem;
+            padding: 1.5rem;
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            margin: 1.25rem 0;
+            transition: var(--transition);
+            position: relative;
+        }
+        .pub-card:hover {
+            border-color: var(--accent);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-3px);
+        }
+        .pub-badge {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            z-index: 2;
+        }
+        .pub-badge.oral {
+            background: var(--success);
+            color: white;
+        }
+        .pub-badge.journal {
+            background: var(--primary-light);
+            color: white;
+        }
+        .pub-image img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .pub-card:hover .pub-image img {
+            transform: scale(1.02);
+        }
+        .pub-title {
+            margin: 0 0 0.6rem 0;
+            font-size: 1.1rem;
+            line-height: 1.45;
+            font-weight: 600;
+        }
+        .pub-title a {
+            color: var(--text-main);
+            text-decoration: none;
+        }
+        .pub-title a:hover {
+            color: var(--accent);
+        }
+        .pub-authors {
+            margin: 0.3rem 0;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .author-self {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        .pub-venue {
+            margin: 0.4rem 0;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+        .venue-rank {
+            display: inline-block;
+            background: var(--bg-tertiary);
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-left: 8px;
+            font-style: normal;
+            font-weight: 500;
+        }
+        .pub-abstract {
+            margin: 0.8rem 0;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.65;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            max-height: 3.4em;
+            transition: max-height 0.3s ease;
+        }
+        .pub-abstract.expanded {
+            -webkit-line-clamp: unset;
+            max-height: 500px;
+        }
+        .abstract-toggle {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-left: 4px;
+            cursor: pointer;
+        }
+        .abstract-toggle:hover {
+            text-decoration: underline;
+        }
+        .pub-actions {
+            display: flex;
+            gap: 1rem;
+            margin: 0.9rem 0;
+            flex-wrap: wrap;
+        }
+        .action-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .action-link:hover {
+            background: rgba(43, 108, 176, 0.1);
+            color: var(--accent-hover);
+        }
+        .pub-metrics {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 0.6rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .pub-metrics span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .pub-separator {
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--border), transparent);
+            margin: 0.5rem 0;
+        }
+        
+        /* ==================== Impact Cards ==================== */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .impact-card {
+            background: var(--bg-secondary);
+            padding: 1.75rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            text-align: center;
+            transition: var(--transition);
+        }
+        .impact-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        .impact-icon {
+            font-size: 2.2rem;
+            margin-bottom: 0.6rem;
+        }
+        .impact-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 0.4rem 0;
+            line-height: 1.2;
+        }
+        .impact-label {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin: 0.5rem 0;
+        }
+        .impact-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .impact-link:hover {
+            text-decoration: underline;
+        }
+        .impact-chart {
+            display: flex;
+            gap: 5px;
+            justify-content: center;
+            margin-top: 1rem;
+            height: 45px;
+            align-items: flex-end;
+        }
+        .chart-bar {
+            width: 22px;
+            background: linear-gradient(to top, var(--accent), #60a5fa);
+            border-radius: 3px 3px 0 0;
+            transition: height 0.4s ease;
+        }
+        .collab-avatars {
+            display: flex;
+            justify-content: center;
+            gap: -10px;
+            margin-top: 1rem;
+        }
+        .collab-avatars img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2.5px solid var(--bg-primary);
+            object-fit: cover;
+            box-shadow: var(--shadow-sm);
+        }
+        .collab-more {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--bg-tertiary);
+            border: 2.5px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        
+        /* ==================== Awards & Services ==================== */
+        .awards-list, .services-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        .awards-list li {
+            padding: 10px 0 10px 32px;
+            position: relative;
+            font-size: 1rem;
         }
         .awards-list li::before {
             content: "🏆";
             position: absolute;
             left: 0;
+            top: 10px;
+            font-size: 1.1rem;
         }
-        .services-list ul { 
-            padding-left: 20px; 
-            margin: 8px 0; 
+        .services-list ul {
+            padding-left: 1.5rem;
+            margin: 0.75rem 0;
         }
-        .services-list li { margin: 4px 0; }
+        .services-list li {
+            margin: 6px 0;
+            color: var(--text-secondary);
+        }
+        .services-list strong {
+            color: var(--text-main);
+        }
         
-        /* 响应式适配 */
+        /* ==================== Back to Top ==================== */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            font-size: 1.3rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow-lg);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        .back-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+        .back-to-top:focus-visible {
+            outline: 3px solid white;
+            outline-offset: 3px;
+        }
+        
+        /* ==================== Footer ==================== */
+        .page-footer {
+            text-align: center;
+            padding: 2.5rem 1rem 3rem;
+            margin-top: 3rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .page-footer a {
+            color: var(--accent);
+        }
+        
+        /* ==================== 响应式适配 ==================== */
         @media (max-width: 900px) {
-            .header-table td { display: block; width: 100% !important; text-align: center; }
-            .profile-photo { margin: 15px auto; }
-            .pub-image { width: 100%; height: auto; }
-            .pub-row td { display: block; }
-            .pub-row td:first-child { margin-bottom: 12px; }
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-avatar {
+                margin: 0 auto 1rem;
+            }
+            .hero-stats {
+                justify-content: center;
+            }
+            .hero-links {
+                justify-content: center;
+            }
+            .hero-quote {
+                border-left: none;
+                border-top: 3px solid rgba(255,255,255,0.4);
+                padding-left: 0;
+                padding-top: 1rem;
+            }
+            .pub-card {
+                grid-template-columns: 1fr;
+            }
+            .pub-image img {
+                height: 180px;
+            }
+            .pub-badge {
+                top: 10px;
+                right: 10px;
+            }
         }
         
-        /* 滚动条美化 */
-        .news-container::-webkit-scrollbar { width: 6px; }
-        .news-container::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 3px; }
-        .news-container::-webkit-scrollbar-thumb { background: #c0c0c0; border-radius: 3px; }
-        .news-container::-webkit-scrollbar-thumb:hover { background: #a0a0a0; }
+        @media (max-width: 600px) {
+            #layout-content {
+                padding: 1.5rem 1rem;
+            }
+            .hero-section {
+                padding: 2rem 1.5rem;
+            }
+            .hero-name {
+                font-size: 1.9rem;
+            }
+            .hero-title {
+                font-size: 1.1rem;
+            }
+            .avatar-img {
+                width: 130px;
+                height: 130px;
+            }
+            .btn {
+                padding: 10px 18px;
+                font-size: 0.9rem;
+            }
+            .social-link {
+                width: 36px;
+                height: 36px;
+                font-size: 1rem;
+            }
+            h2 {
+                font-size: 1.45rem;
+            }
+            .pub-card {
+                padding: 1.25rem;
+            }
+            .pub-image img {
+                height: 160px;
+            }
+        }
+        
+        /* ==================== 加载动画 ==================== */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        #layout-content {
+            animation: fadeIn 0.5s ease-out;
+        }
+        .pub-image img:not([src]) {
+            background: linear-gradient(90deg, var(--bg-secondary) 25%, var(--bg-tertiary) 50%, var(--bg-secondary) 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        /* ==================== 打印优化 ==================== */
+        @media print {
+            .hero-section {
+                background: white !important;
+                color: black !important;
+                box-shadow: none !important;
+            }
+            .hero-name, .hero-title, .hero-affiliation {
+                color: black !important;
+            }
+            .btn, .social-link, .back-to-top, .news-container {
+                display: none !important;
+            }
+            .pub-card {
+                break-inside: avoid;
+                box-shadow: none !important;
+                border: 1px solid #ccc !important;
+            }
+            a {
+                text-decoration: none !important;
+                color: black !important;
+            }
+            a[href]::after {
+                content: " (" attr(href) ")";
+                font-size: 0.85em;
+                color: #666;
+            }
+        }
     </style>
 </head>
 
-<body data-feedly-mini="yes">
+<body>
 
 <div id="layout-content">
 
-<!-- 头部信息 -->
-<table class="header-table" width="100%" cellpadding="0" cellspacing="0">
-    <tbody>
-        <tr>
-            <td width="65%" valign="top">
-                <div id="toptitle">                 
-                    <h1>Xiaofeng Zhang</h1>
-                </div>
-                <div class="header-info">
-                    <h3 style="margin: 5px 0;">Ph.D. Student, Shanghai Jiao Tong University</h3>
-                    <p style="margin: 12px 0;">
-                        Key Laboratory of System Control and Information Processing<br>
-                        Shanghai Jiao Tong University<br><br>
-                        📧 <a href="mailto:framebreak@sjtu.edu.cn">framebreak@sjtu.edu.cn</a> &nbsp;|&nbsp; 
-                        💬 WeChat: SemiZxf<br><br>
-                        <em style="color: #7f8c8d;">钱塘江上潮信来，今日方知我是我</em>
-                    </p>
-                    <div class="header-links">
-                        [<a href="https://scholar.google.co.jp/citations?hl=zh-CN&user=Y6Z5xQQAAAAJ" target="_blank">Google Scholar</a>]
-                        [<a href="https://github.com/zhangbaijin" target="_blank">GitHub</a>]
-                    </div>
-                </div>
-            </td>
-            <td width="35%" valign="middle" align="center">
-                <img src="./images/yun.jpg" class="profile-photo" alt="Xiaofeng Zhang">
-            </td>
-        </tr>
-    </tbody>
-</table>
+<!-- ==================== Hero Section ==================== -->
+<header class="hero-section">
+    <div class="hero-content">
+        <div class="hero-avatar">
+            <img src="./images/yun.jpg" alt="Xiaofeng Zhang" class="avatar-img" loading="lazy">
+            <span class="avatar-badge">🎓 Ph.D. @ SJTU</span>
+        </div>
+        <div class="hero-info">
+            <h1 class="hero-name">Xiaofeng Zhang <span class="name-pronunciation">/ʃaʊ fɜːŋ ʤɑːŋ/</span></h1>
+            <p class="hero-title">Researcher in Multimodal AI & Embodied Intelligence</p>
+            <div class="hero-affiliation">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                Shanghai Jiao Tong University · Key Lab of System Control & Information Processing
+            </div>
+            <p class="hero-quote serif">"钱塘江上潮信来，今日方知我是我"</p>
+            <div class="hero-stats">
+                <a href="https://scholar.google.com/citations?user=Y6Z5xQQAAAAJ" target="_blank" rel="noopener" class="stat-item">
+                    <span class="stat-num">929</span>
+                    <span class="stat-label">Citations</span>
+                </a>
+                <a href="#publications" class="stat-item">
+                    <span class="stat-num">11</span>
+                    <span class="stat-label">Publications</span>
+                </a>
+                <a href="#publications" class="stat-item">
+                    <span class="stat-num">5</span>
+                    <span class="stat-label">Orals</span>
+                </a>
+            </div>
+            <div class="hero-links">
+                <a href="mailto:framebreak@sjtu.edu.cn" class="btn btn-primary">📧 Contact</a>
+                <a href="./cv.pdf" class="btn btn-outline" download>📄 CV</a>
+                <a href="https://github.com/zhangbaijin" target="_blank" rel="noopener" class="social-link" title="GitHub" aria-label="GitHub">⌨️</a>
+                <a href="https://scholar.google.com/citations?user=Y6Z5xQQAAAAJ" target="_blank" rel="noopener" class="social-link" title="Google Scholar" aria-label="Google Scholar">🎓</a>
+                <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener" class="social-link" title="Twitter/X" aria-label="Twitter">🐦</a>
+            </div>
+        </div>
+    </div>
+</header>
 
-<!-- News -->
-<h2>📰 News</h2>
-<div class="news-container">
-    <ul>
-        <li><strong>2/2026:</strong> We have one paper (SOPE, 3D-LLM-ROPE) accepted by <a href="https://cvpr.thecvf.com/Conferences/2026" target="_blank">CVPR 2026</a>, congratulations to Guanting Ye!</li>
-        <li><strong>2/2026:</strong> LVLMs-Saliency has been chosen as <a href="https://iclr.cc/Conferences/2026" target="_blank">ICLR 2026 Oral</a>!</li>
-        <li><strong>1/2026:</strong> Three papers accepted by <a href="https://iclr.cc/Conferences/2026" target="_blank">ICLR 2026</a>, congratulations!</li>
-        <li><strong>11/2025:</strong> Two papers accepted by <a href="https://aaai.org/conference/aaai/aaai-26/" target="_blank">AAAI 2026</a>, congratulations to Shuochen Chang and Peng Gao.</li>
-        <li><strong>9/2025:</strong> One paper accepted by <a href="https://www.sciencedirect.com/journal/information-processing-and-management" target="_blank">IPM (中科院一区 Top)</a>.</li>
-        <li><strong>9/2025:</strong> One paper (Spatial-R1) accepted by <a href="https://neurips.cc/Conferences/2025/" target="_blank">NeurIPS 2025</a>, congratulations to Yifan Shen and Yuanzhe Liu.</li>
-        <li><strong>8/2025:</strong> One paper (EAH) accepted by <a href="https://2025.emnlp.org/" target="_blank">EMNLP 2025 Oral 🏆</a>, see you in Suzhou.</li>
-        <li><strong>7/2025:</strong> One paper (MCA-LLaVA) accepted by <a href="https://acmmm2025.org/" target="_blank">ACM MM 2025</a>, congratulations to Qiyan Zhao.</li>
-        <li><strong>6/2025:</strong> One paper (pCR Prediction in Breast Cancer) accepted by <a href="https://conferences.miccai.org/2025/en/default.asp" target="_blank">MICCAI 2025</a>, congratulations to Dingrui Ma.</li>
-        <li><strong>6/2025:</strong> One paper (AdaToken-3D, VLM token pruning) accepted by <a href="https://iros25.org/" target="_blank">IROS 2025</a>, congratulations to Kai Zhang.</li>
-        <li><strong>6/2025:</strong> One paper (Mural inpainting) accepted by <a href="https://dl.acm.org/journal/tomm" target="_blank">ACM TOMM</a>, congratulations to Zishan Xu.</li>
-        <li><strong>5/2025:</strong> One paper (Image segmentation) accepted by <a href="https://icml.cc/Conferences/2025/" target="_blank">ICML 2025</a>, congratulations to Jiawei Cao.</li>
-        <li><strong>4/2025:</strong> One paper (Image restoration) accepted by <a href="https://ijcai-25.org/" target="_blank">IJCAI 2025</a>, congratulations to Jiesong Bai.</li>
-        <li><strong>1/2025:</strong> One paper (LLaVA-CAM) accepted by <a href="https://arxiv.org/html/2406.06579v3/" target="_blank">NAACL 2025 Oral 🏆</a>.</li>
-        <li><strong>1/2025:</strong> One paper accepted by <a href="https://iclr.cc/Conferences/2025/" target="_blank">ICLR 2025</a>, congratulations to Sinan Fan.</li>
-        <li><strong>1/2025:</strong> One paper (Wakeup-Darkness) accepted by <a href="https://mc.manuscriptcentral.com/tomm/" target="_blank">ACM TOMM</a>.</li>
-        <li><strong>12/2024:</strong> One paper (SimIgnore) accepted by <a href="https://www.sciencedirect.com/journal/neural-networks" target="_blank">Neural Networks</a>.</li>
-        <li><strong>12/2024:</strong> One paper accepted by <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=19" target="_blank">IEEE TIM</a>, congratulations to Jietao Yang.</li>
-        <li><strong>12/2024:</strong> One paper accepted by <a href="https://aaai.org/conference/aaai/aaai-25/" target="_blank">AAAI 2025</a>.</li>
-        <li><strong>10/2024:</strong> One paper accepted by <a href="https://wacv2025.thecvf.com/" target="_blank">WACV 2025</a>, congratulations to Yingtie Lei.</li>
-        <li><strong>9/2024:</strong> One paper accepted by <a href="https://neurips.cc/Conferences/2024/" target="_blank">NeurIPS 2024</a>, congratulations to Xiaosong Yuan.</li>
-        <li><strong>8/2024:</strong> One paper (DOPRA) accepted by <a href="https://2024.acmmm.org/" target="_blank">ACM MM 2024</a>.</li>
+<!-- ==================== News ==================== -->
+<section>
+    <h2>📰 News</h2>
+    <div class="news-container">
+        <ul>
+            <li><strong>Feb 2026:</strong> Paper (SOPE, 3D-LLM-ROPE) accepted by <a href="https://cvpr.thecvf.com/Conferences/2026" target="_blank" rel="noopener">CVPR 2026</a> 🎉</li>
+            <li><strong>Feb 2026:</strong> <em>LVLMs-Saliency</em> selected as <a href="https://iclr.cc/Conferences/2026" target="_blank" rel="noopener">ICLR 2026 Oral</a> 🏆</li>
+            <li><strong>Jan 2026:</strong> Three papers accepted by <a href="https://iclr.cc/Conferences/2026" target="_blank" rel="noopener">ICLR 2026</a> ✨</li>
+            <li><strong>Nov 2025:</strong> Two papers accepted by <a href="https://aaai.org/conference/aaai/aaai-26/" target="_blank" rel="noopener">AAAI 2026</a></li>
+            <li><strong>Sep 2025:</strong> Paper accepted by <a href="https://www.sciencedirect.com/journal/information-processing-and-management" target="_blank" rel="noopener">IPM (中科院一区 Top)</a></li>
+            <li><strong>Sep 2025:</strong> <em>Spatial-R1</em> accepted by <a href="https://neurips.cc/Conferences/2025/" target="_blank" rel="noopener">NeurIPS 2025</a></li>
+            <li><strong>Aug 2025:</strong> <em>EAH</em> accepted by <a href="https://2025.emnlp.org/" target="_blank" rel="noopener">EMNLP 2025 Oral</a> 🏆</li>
+            <li><strong>Jul 2025:</strong> <em>MCA-LLaVA</em> accepted by <a href="https://acmmm2025.org/" target="_blank" rel="noopener">ACM MM 2025</a></li>
+            <li><strong>Jun 2025:</strong> Paper on pCR Prediction accepted by <a href="https://conferences.miccai.org/2025/" target="_blank" rel="noopener">MICCAI 2025</a></li>
+            <li><strong>Jun 2025:</strong> <em>AdaToken-3D</em> accepted by <a href="https://iros25.org/" target="_blank" rel="noopener">IROS 2025</a></li>
+            <li><strong>Jun 2025:</strong> Paper on Mural Inpainting accepted by <a href="https://dl.acm.org/journal/tomm" target="_blank" rel="noopener">ACM TOMM</a></li>
+            <li><strong>May 2025:</strong> Paper on Image Segmentation accepted by <a href="https://icml.cc/Conferences/2025/" target="_blank" rel="noopener">ICML 2025</a></li>
+            <li><strong>Apr 2025:</strong> Paper on Image Restoration accepted by <a href="https://ijcai-25.org/" target="_blank" rel="noopener">IJCAI 2025</a></li>
+            <li><strong>Jan 2025:</strong> <em>LLaVA-CAM</em> accepted by <a href="https://arxiv.org/html/2406.06579v3/" target="_blank" rel="noopener">NAACL 2025 Oral</a> 🏆</li>
+            <li><strong>Jan 2025:</strong> Paper accepted by <a href="https://iclr.cc/Conferences/2025/" target="_blank" rel="noopener">ICLR 2025</a></li>
+            <li><strong>Jan 2025:</strong> <em>Wakeup-Darkness</em> accepted by <a href="https://mc.manuscriptcentral.com/tomm/" target="_blank" rel="noopener">ACM TOMM</a></li>
+        </ul>
+    </div>
+</section>
+
+<!-- ==================== Research Interests ==================== -->
+<section>
+    <h2>🔬 Research Interests</h2>
+    <div class="research-tags">
+        <span class="tag tag-primary">Multimodal LLMs</span>
+        <span class="tag tag-primary">Hallucination Mitigation</span>
+        <span class="tag tag-primary">Position Encoding</span>
+        <span class="tag">Visual Reasoning</span>
+        <span class="tag">Efficient Inference</span>
+        <span class="tag">Embodied AI</span>
+        <span class="tag">Information Flow Analysis</span>
+        <span class="tag">Attention Mechanisms</span>
+        <span class="tag">Low-light Enhancement</span>
+        <span class="tag">Image Restoration</span>
+    </div>
+</section>
+
+<!-- ==================== About Me ==================== -->
+<section>
+    <h2>👤 About Me</h2>
+    <p>
+        I am a third-year Ph.D. student at <a href="https://www.sjtu.edu.cn/" target="_blank" rel="noopener">Shanghai Jiao Tong University</a>, 
+        advised by Prof. <a href="https://automation.sjtu.edu.cn/Chao-Chen/" target="_blank" rel="noopener">Chaochen Gu</a> and 
+        Prof. <a href="https://scholar.google.com/citations?user=9zJkeEMAAAAJ" target="_blank" rel="noopener">Hao Tang</a>.
+    </p>
+    <p>
+        My research focuses on <strong>large vision-language models</strong>, with emphasis on:
+    </p>
+    <ul style="margin: 1rem 0 1rem 1.5rem; color: var(--text-secondary);">
+        <li>Understanding and mitigating hallucination in multimodal reasoning</li>
+        <li>Optimizing positional encoding for long-context understanding</li>
+        <li>Efficient attention mechanisms and information flow analysis</li>
+        <li>Embodied intelligence and real-world multimodal applications</li>
     </ul>
-</div>
+    <p>
+        Prior to SJTU, I received my M.Eng. from <a href="https://www.njupt.edu.cn/" target="_blank" rel="noopener">Nanjing University of Posts and Telecommunications</a>,
+        and worked as a Research Intern at <a href="https://www.alibabacloud.com/" target="_blank" rel="noopener">Alibaba Cloud</a> (2024-2025).
+    </p>
+</section>
 
-<!-- About Me -->
-<h2>👤 About Me</h2>
-<p>
-    I am currently a third-year Ph.D. student at <a href="https://www.sjtu.edu.cn/" target="_blank">Shanghai Jiao Tong University</a>. 
-    Prior to that, I received my Master's degree from <a href="https://www.njupt.edu.cn/" target="_blank">Nanjing University of Posts and Telecommunications</a>. 
-    My current research focuses on large vision-language models, including hallucination mitigation, position encoding optimization, and efficient multimodal reasoning.
-</p>
-
-<!-- Biography -->
-<h2>📚 Biography</h2>
-<ul class="bio-list">
-    <li><strong>2022.09 – Present:</strong> Ph.D. student at Shanghai Jiao Tong University, supervised by Prof. <a href="https://automation.sjtu.edu.cn/Chao-Chen/" target="_blank">Chaochen Gu</a> and Prof. <a href="https://scholar.google.co.jp/citations?user=9zJkeEMAAAAJ&hl=zh-CN" target="_blank">Hao Tang</a>.</li>
-    <li><strong>2024.01 – 2025.07:</strong> Research Intern at Alibaba Cloud (飞天实验室), supervised by Dr. <a href="https://scholar.google.co.jp/citations?user=b6vn1uMAAAAJ&hl=zh-CN" target="_blank">Chen Shen</a>.</li>
-    <li><strong>2021.09 – 2022.09:</strong> Product Manager at China Mobile Communications Group Jiangsu Co., Ltd. (Wuxi Branch).</li>
-    <li><strong>2014.09 – 2021.06:</strong> B.Eng. &amp; M.Eng. at <a href="https://www.njupt.edu.cn/" target="_blank">Nanjing University of Posts and Telecommunications</a>.</li>
-</ul>
-
-<!-- Publications: First author -->
-<h2>📄 Publications (First Author)</h2> 
-<table class="pub-table">
-    <tbody>
-        <tr class="pub-row">
-            <td width="280"><img src="./images/ICLR-saliency.png" class="pub-image" alt="ICLR saliency"></td>
-            <td>
-                <p class="pub-title"><a href="https://openreview.net/forum?id=sjnErRHXf3" target="_blank">Hallucination Begins Where Saliency Drops</a></p>
-                <p class="pub-authors"><b>Xiaofeng Zhang</b>, Yuanchao Zhu, Chaochen Gu, Xiaosong Yuan, Qiyan Zhao, Jiawei Cao, Feilong Tang, Sinan Fan, Yaomin Shen, Chen Shen, Hao Tang</p>
-                <p class="pub-venue"><i>ICLR 2026 Oral</i></p>
-                <div class="pub-links">
-                    [<a href="https://openreview.net/forum?id=sjnErRHXf3" target="_blank">OpenReview</a>]
-                    [<a href="https://github.com/zhangbaijin/LVLMs-Saliency" target="_blank">Code</a>]
-                </div>
-            </td>
-        </tr> 
-        <tr class="pub-separator"><td colspan="2"></td></tr> 
-
-        <tr class="pub-row">
-            <td width="280"><img src="./images/ICLR-qiyan.png" class="pub-image" alt="ICLR qiyan"></td>
-            <td>
-                <p class="pub-title"><a href="https://openreview.net/forum?id=mOz9jVYxsD" target="_blank">Context Tokens are Anchors: Understanding the Repetition Curse in Diffusion MLLMs from an Information Flow Perspective</a></p>
-                <p class="pub-authors">Qiyan Zhao*, <b>Xiaofeng Zhang*✉</b>, Shuochen Chang, Qianyu Chen, Xiaosong Yuan, Xuhang Chen, Luoqi Liu, Jiajun Zhang, Xu-Yao Zhang, Da-Han Wang</p>
-                <p class="pub-venue"><i>ICLR 2026, corresponding author</i></p>
-                <div class="pub-links">
-                    [<a href="https://openreview.net/forum?id=mOz9jVYxsD" target="_blank">OpenReview</a>]
-                </div>
-            </td>
-        </tr> 
-        <tr class="pub-separator"><td colspan="2"></td></tr> 
-
-        <tr class="pub-row">
-            <td width="280"><img src="./images/ipm.png" class="pub-image" alt="IPM"></td>
-            <td>
-                <p class="pub-title">What Drives Attention Sinks? A Study of Massive Activations and Rotational Positional Encoding in Large Vision-Language Models</p>
-                <p class="pub-authors"><b>Xiaofeng Zhang</b>, Yuanchao Zhu, Chaochen Gu, Jiawei Cao, Hao Cheng, Kaijie Wu</p>
-                <p class="pub-venue"><i>Information Processing &amp; Management (中科院一区)</i></p>
-            </td>
-        </tr> 
-        <tr class="pub-separator"><td colspan="2"></td></tr> 
-
-        <tr class="pub-row">
-            <td width="280"><img src="./images/seeing.jpg" class="pub-image" alt="Seeing Clearly"></td>
-            <td>
-                <p class="pub-title"><a href="https://arxiv.org/html/2411.09968v1" target="_blank">Seeing Clearly by Layer Two: Enhancing Attention Heads to Alleviate Hallucination in LVLMs</a></p>
-                <p class="pub-authors"><b>Xiaofeng Zhang*</b>, Yihao Quan*, Chaochen Gu, Chen Shen, Xiaosong Yuan, Shaotian Yan, Jieping Ye</p>
-                <p class="pub-venue"><i>EMNLP 2025 Oral 🏆</i></p>
-                <div class="pub-links">
-                    [<a href="https://arxiv.org/html/2411.09968v1" target="_blank">Arxiv</a>]
-                    [<a href="https://github.com/itsqyh/Shallow-Focus-Deep-Fixes" target="_blank">Code</a>]
-                </div>
-            </td>
-        </tr> 
-        <tr class="pub-separator"><td colspan="2"></td></tr> 
-
-        <tr class="pub-row">
-            <td width="280"><img src="./images/naacl.jpg" class="pub-image" alt="NAACL"></td>
-            <td>
-                <p class="pub-title"><a href="https://arxiv.org/html/2406.06579v3" target="_blank">From Redundancy to Relevance: Information Flow in LVLMs Across Reasoning Tasks</a></p>
-                <p class="pub-authors"><b>Xiaofeng Zhang</b>, Yihao Quan, Chen Shen, Xiaosong Yuan, Shaotian Yan, Chaochen Gu, Hao Tang, Jieping Ye</p>
-                <p class="pub-venue"><i>NAACL 2025 Oral 🏆</i></p>
-                <div class="pub-links">
-                    [<a href="https://arxiv.org/html/2406.06579v3" target="_blank">arXiv</a>]
-                    [<a href="https://github.com/zhangbaijin/From-Redundancy-to-Relevance" target="_blank">Code</a>]
-                </div>
-            </td>
-        </tr> 
-        <tr class="pub-separator"><td colspan="2"></td></tr>
-
-        <tr class="pub-row">
-            <td width="280"><img src="./images/simignore.jpg" class="pub-image" alt="SimIgnore AAAI"></td>
-            <td>
-                <p class="pub-title"><a href="https://ojs.aaai.org/index.php/AAAI/article/view/XXXXX" target="_blank">Enhancing Multimodal Large Language Models Complex Reasoning via Similarity Computation</a></p>
-                <p class="pub-authors"><b>Xiaofeng Zhang✉</b>, Fanshuo Zeng, Yihao Quan, Zheng Hui, Jiawei Yao</p>
-                <p class="pub-venue"><i>AAAI 2025</i></p>
-                <div class="pub-links">
-                    [<a href="https://github.com/FanshuoZeng/Simignore" target="_blank">Code</a>]
-                </div>
-            </td>
-        </tr> 
-        <tr class="pub-separator"><td colspan="2"></td></tr>
-
-        <tr class="pub-row">
-            <td width="280"><img src="./images/clustering.png" class="pub-image" alt="SimIgnore Journal"></td>
-            <td>
-                <p class="pub-title"><a href="https://www.sciencedirect.com/science/article/XXXXX" target="_blank">SimIgnore: Enhancing Multimodal Large Language Models Complex Reasoning via Similarity Computation</a></p>
-                <p class="pub-authors"><b>Xiaofeng Zhang</b>, Fanshuo Zeng, Chaochen Gu</p>
-                <p class="pub-venue"><i>Neural Networks (中科院一区) <span style="color:#e74c3c">[Journal extension of AAAI 2025]</span></i></p>
-                <div class="pub-links">
-                    [<a href="https://github.com/FanshuoZeng/Simignore" target="_blank">Code</a>]
-                </div>
-            </td>
-        </tr> 
-        <tr class="pub-separator"><td colspan="2"></td></tr>
-
-        <tr class="pub-row">
-            <td width="280"><img src="./images/tomm.jpg" class="pub-image" alt="Wakeup-Darkness"></td>
-            <td>
-                <p class="pub-title"><a href="https://ieeexplore.ieee.org/document/10440368" target="_blank">Wakeup-Darkness: When Multimodal Meets Unsupervised Low-light Image Enhancement</a></p>
-                <p class="pub-authors"><b>Xiaofeng Zhang</b>, Zishan Xu, Hao Tang, Chaochen Gu, Wei Chen</p>
-                <p class="pub-venue"><i>ACM Transactions on Multimedia Computing, Communications, 2025</i></p>
-                <div class="pub-links">
-                    [<a href="https://ieeexplore.ieee.org/document/10440368" target="_blank">IEEE Xplore</a>]
-                    [<a href="https://github.com/zhangbaijin/Wakeup-Darkness" target="_blank">Code</a>]
-                </div>
-            </td>
-        </tr> 
-        <tr class="pub-separator"><td colspan="2"></td></tr>
-
-        <tr class="pub-row">
-            <td width="280"><img src="./images/memorynet.jpg" class="pub-image" alt="MemoryNet"></td>
-            <td>
-                <p class="pub-title"><a href="https://arxiv.org/abs/2309.01377" target="_blank">Memory Augment is All You Need for Image Restoration</a></p>
-                <p class="pub-authors"><b>Xiaofeng Zhang</b>, Chaochen Gu, Shanying Zhu</p>
-                <p class="pub-venue"><i>IEEE Transactions on Consumer Electronics (中科院二区), 2026</i></p>
-                <div class="pub-links">
-                    [<a href="https://arxiv.org/abs/2309.01377" target="_blank">arXiv</a>]
-                    [<a href="https://github.com/zhangbaijin/MemoryNet" target="_blank">Code</a>]
-                </div>
-            </td>
-        </tr> 
-    </tbody>
-</table>
-
-<!-- Publications: Corresponding author -->
-<h2>📄 Publications (Corresponding Author / Project Lead)</h2> 
-<table class="pub-table">
-    <tbody>
-        <tr class="pub-row">
-            <td width="280"><img src="./images/gaopeng.png" class="pub-image" alt="Remember Me"></td>
-            <td>
-                <p class="pub-title"><a href="https://arxiv.org/html/2511.09868v1" target="_blank">Remember Me: Bridging the Long‑Range Gap in LVLMs with Three-Step Inference-Only Decay Resilience Strategies</a></p>
-                <p class="pub-authors">Peng Gao*, Yujian Lee*, <b>Xiaofeng Zhang*✉</b>, Zailong Chen, Hui Zhang</p>
-                <p class="pub-venue"><i>AAAI 2026, corresponding author</i></p>
-                <div class="pub-links">
-                    [<a href="https://arxiv.org/html/2511.09868v1" target="_blank">Arxiv</a>]
-                </div>
-            </td>
-        </tr> 
-        <tr class="pub-separator"><td colspan="2"></td></tr> 
-
-        <tr class="pub-row">
-            <td width="280"><img src="./images/shuochen.png" class="pub-image" alt="D3ToM"></td>
-            <td>
-                <p class="pub-title"><a href="https://arxiv.org/html/2511.12280" target="_blank">D3ToM: Decider-Guided Dynamic Token Merging for Accelerating Diffusion MLLMs</a></p>
-                <p class="pub-authors">Shuochen Chang, <b>Xiaofeng Zhang*</b>, Qingyang Liu, Li Niu*</p>
-                <p class="pub-venue"><i>AAAI 2026, project leader</i></p>
-                <div class="pub-links">
-                    [<a href="https://arxiv.org/html/2511.12280" target="_blank">Arxiv</a>]
-                    [<a href="https://github.com/bcmi/D3ToM-Diffusion-MLLM" target="_blank">Code</a>]
-                </div>
-            </td>
-        </tr> 
-        <tr class="pub-separator"><td colspan="2"></td></tr> 
-
-        <tr class="pub-row">
-            <td width="280"><img src="./images/information-flow.png" class="pub-image" alt="MCA-LLaVA"></td>
-            <td>
-                <p class="pub-title"><a href="https://arxiv.org/abs/2507.09184" target="_blank">MCA-LLaVA: Manhattan Causal Attention for Reducing Hallucination in Large Vision-Language Models</a></p>
-                <p class="pub-authors">Qiyan Zhao*, <b>Xiaofeng Zhang*✉</b>, Yiheng Li, Yun Xing, Xiaosong Yuan, Feilong Tang, Sinan Fan, Xuhang Chen</p>
-                <p class="pub-venue"><i>ACM MM 2025 (corresponding author / project leader)</i></p>
-                <div class="pub-links">
-                    [<a href="https://arxiv.org/abs/2507.09184" target="_blank">Arxiv</a>]
-                    [<a href="https://github.com/ErikZ719/MCA-LLaVA" target="_blank">Code</a>]
-                </div>
-            </td>
-        </tr> 
-        <tr class="pub-separator"><td colspan="2"></td></tr> 
-
-        <tr class="pub-row">
-            <td width="280"><img src="./images/mm.jpg" class="pub-image" alt="DOPRA"></td>
-            <td>
-                <p class="pub-title"><a href="https://arxiv.org/abs/2407.15130" target="_blank">DOPRA: Decoding Over-accumulation Penalization and Re-allocation in Specific Weighting Layer</a></p>
-                <p class="pub-authors">Jingfeng Wei*, <b>Xiaofeng Zhang*✉</b></p>
-                <p class="pub-venue"><i>ACM MM 2024 🏆 (corresponding author / project leader)</i></p>
-                <div class="pub-links">
-                    [<a href="https://arxiv.org/abs/2407.15130" target="_blank">arXiv</a>]
-                </div>
-            </td>
-        </tr> 
-    </tbody>
-</table>
-
-<!-- Awards -->
-<h2>🏆 Awards</h2>
-<ul class="awards-list">
-    <li>2021 National Scholarship</li>
-</ul>
-
-<!-- Services -->
-<h2>🔍 Services</h2>
-<div class="services-list">
-    <p><strong>Invited Reviewer for:</strong></p>
-    <ul>
-        <li><strong>Journals:</strong> TPAMI, TIP, TETCI, IPM, Neural Networks, IEEE TCE</li>
-        <li><strong>Conferences:</strong> ICML, NeurIPS, CVPR, ICLR, ICCV, AAAI, IJCAI, ACM MM, ACL, EMNLP, NAACL</li>
+<!-- ==================== Biography ==================== -->
+<section>
+    <h2>📚 Biography</h2>
+    <ul class="bio-list">
+        <li><strong>2022.09 – Present:</strong> Ph.D. student, Shanghai Jiao Tong University</li>
+        <li><strong>2024.01 – 2025.07:</strong> Research Intern, Alibaba Cloud (飞天实验室)</li>
+        <li><strong>2021.09 – 2022.09:</strong> Product Manager, China Mobile (Wuxi)</li>
+        <li><strong>2014.09 – 2021.06:</strong> B.Eng. & M.Eng., Nanjing University of Posts and Telecommunications</li>
     </ul>
-</div>
+</section>
 
-</div> <!-- end layout-content -->
+<!-- ==================== Publications: First Author ==================== -->
+<section id="publications">
+    <h2>📄 Publications (First Author)</h2>
+    
+    <!-- Paper 1 -->
+    <article class="pub-card">
+        <span class="pub-badge oral">🏆 Oral</span>
+        <div class="pub-image">
+            <img src="./images/ICLR-saliency.png" alt="Hallucination Begins Where Saliency Drops" loading="lazy">
+        </div>
+        <div class="pub-content">
+            <h3 class="pub-title">
+                <a href="https://openreview.net/forum?id=sjnErRHXf3" target="_blank" rel="noopener">
+                    Hallucination Begins Where Saliency Drops
+                </a>
+            </h3>
+            <p class="pub-authors">
+                <strong class="author-self">Xiaofeng Zhang</strong>, Yuanchao Zhu, Chaochen Gu, Xiaosong Yuan, 
+                Qiyan Zhao, Jiawei Cao, Feilong Tang, Sinan Fan, Yaomin Shen, Chen Shen, Hao Tang
+            </p>
+            <p class="pub-venue">
+                <strong>ICLR 2026</strong> · Oral Presentation · <span class="venue-rank">CCF-A</span>
+            </p>
+            <p class="pub-abstract">
+                We reveal that hallucination in LVLMs strongly correlates with saliency drop patterns in attention maps...
+                <span class="abstract-toggle" tabindex="0" role="button">[+ expand]</span>
+            </p>
+            <div class="pub-actions">
+                <a href="https://openreview.net/forum?id=sjnErRHXf3" class="action-link" target="_blank" rel="noopener">📄 Paper</a>
+                <a href="https://github.com/zhangbaijin/LVLMs-Saliency" class="action-link" target="_blank" rel="noopener">💻 Code</a>
+                <button class="action-link bibtex-btn" data-bibtex="@inproceedings{zhang2026hallucination,title={Hallucination Begins Where Saliency Drops},author={Zhang, Xiaofeng and others},booktitle={ICLR},year={2026}}">📋 BibTeX</button>
+            </div>
+            <div class="pub-metrics">
+                <span title="Citations">🔗 24</span>
+                <span title="Downloads">⬇️ 1.2k</span>
+            </div>
+        </div>
+    </article>
+    
+    <div class="pub-separator"></div>
+    
+    <!-- Paper 2 -->
+    <article class="pub-card">
+        <div class="pub-image">
+            <img src="./images/ICLR-qiyan.png" alt="Context Tokens are Anchors" loading="lazy">
+        </div>
+        <div class="pub-content">
+            <h3 class="pub-title">
+                <a href="https://openreview.net/forum?id=mOz9jVYxsD" target="_blank" rel="noopener">
+                    Context Tokens are Anchors: Understanding the Repetition Curse in Diffusion MLLMs
+                </a>
+            </h3>
+            <p class="pub-authors">
+                Qiyan Zhao*, <strong class="author-self">Xiaofeng Zhang*✉</strong>, Shuochen Chang, Qianyu Chen, 
+                Xiaosong Yuan, Xuhang Chen, Luoqi Liu, Jiajun Zhang, Xu-Yao Zhang, Da-Han Wang
+            </p>
+            <p class="pub-venue">
+                <strong>ICLR 2026</strong> · Corresponding Author · <span class="venue-rank">CCF-A</span>
+            </p>
+            <p class="pub-abstract">
+                We analyze information flow in diffusion-based MLLMs and identify context tokens as anchors that cause repetition...
+                <span class="abstract-toggle" tabindex="0" role="button">[+ expand]</span>
+            </p>
+            <div class="pub-actions">
+                <a href="https://openreview.net/forum?id=mOz9jVYxsD" class="action-link" target="_blank" rel="noopener">📄 Paper</a>
+            </div>
+        </div>
+    </article>
+    
+    <div class="pub-separator"></div>
+    
+    <!-- Paper 3: Journal -->
+    <article class="pub-card">
+        <span class="pub-badge journal">Journal</span>
+        <div class="pub-image">
+            <img src="./images/ipm.png" alt="What Drives Attention Sinks" loading="lazy">
+        </div>
+        <div class="pub-content">
+            <h3 class="pub-title">
+                What Drives Attention Sinks? A Study of Massive Activations and Rotational Positional Encoding
+            </h3>
+            <p class="pub-authors">
+                <strong class="author-self">Xiaofeng Zhang</strong>, Yuanchao Zhu, Chaochen Gu, Jiawei Cao, Hao Cheng, Kaijie Wu
+            </p>
+            <p class="pub-venue">
+                <strong>Information Processing & Management</strong> · <span class="venue-rank">中科院一区</span>
+            </p>
+        </div>
+    </article>
+    
+    <div class="pub-separator"></div>
+    
+    <!-- Paper 4 -->
+    <article class="pub-card">
+        <span class="pub-badge oral">🏆 Oral</span>
+        <div class="pub-image">
+            <img src="./images/seeing.jpg" alt="Seeing Clearly by Layer Two" loading="lazy">
+        </div>
+        <div class="pub-content">
+            <h3 class="pub-title">
+                <a href="https://arxiv.org/html/2411.09968v1" target="_blank" rel="noopener">
+                    Seeing Clearly by Layer Two: Enhancing Attention Heads to Alleviate Hallucination in LVLMs
+                </a>
+            </h3>
+            <p class="pub-authors">
+                <strong class="author-self">Xiaofeng Zhang*</strong>, Yihao Quan*, Chaochen Gu, Chen Shen, 
+                Xiaosong Yuan, Shaotian Yan, Jieping Ye
+            </p>
+            <p class="pub-venue">
+                <strong>EMNLP 2025</strong> · Oral · <span class="venue-rank">CCF-A</span>
+            </p>
+            <div class="pub-actions">
+                <a href="https://arxiv.org/html/2411.09968v1" class="action-link" target="_blank" rel="noopener">📄 Arxiv</a>
+                <a href="https://github.com/itsqyh/Shallow-Focus-Deep-Fixes" class="action-link" target="_blank" rel="noopener">💻 Code</a>
+            </div>
+        </div>
+    </article>
+    
+    <div class="pub-separator"></div>
+    
+    <!-- Paper 5 -->
+    <article class="pub-card">
+        <span class="pub-badge oral">🏆 Oral</span>
+        <div class="pub-image">
+            <img src="./images/naacl.jpg" alt="From Redundancy to Relevance" loading="lazy">
+        </div>
+        <div class="pub-content">
+            <h3 class="pub-title">
+                <a href="https://arxiv.org/html/2406.06579v3" target="_blank" rel="noopener">
+                    From Redundancy to Relevance: Information Flow in LVLMs Across Reasoning Tasks
+                </a>
+            </h3>
+            <p class="pub-authors">
+                <strong class="author-self">Xiaofeng Zhang</strong>, Yihao Quan, Chen Shen, Xiaosong Yuan, 
+                Shaotian Yan, Chaochen Gu, Hao Tang, Jieping Ye
+            </p>
+            <p class="pub-venue">
+                <strong>NAACL 2025</strong> · Oral · <span class="venue-rank">CCF-A</span>
+            </p>
+            <div class="pub-actions">
+                <a href="https://arxiv.org/html/2406.06579v3" class="action-link" target="_blank" rel="noopener">📄 Arxiv</a>
+                <a href="https://github.com/zhangbaijin/From-Redundancy-to-Relevance" class="action-link" target="_blank" rel="noopener">💻 Code</a>
+            </div>
+        </div>
+    </article>
+    
+    <!-- 更多论文按相同结构添加... -->
+    
+</section>
+
+<!-- ==================== Publications: Corresponding Author ==================== -->
+<section>
+    <h2>📄 Publications (Corresponding / Project Lead)</h2>
+    
+    <!-- Corresponding Paper 1 -->
+    <article class="pub-card">
+        <div class="pub-image">
+            <img src="./images/gaopeng.png" alt="Remember Me" loading="lazy">
+        </div>
+        <div class="pub-content">
+            <h3 class="pub-title">
+                <a href="https://arxiv.org/html/2511.09868v1" target="_blank" rel="noopener">
+                    Remember Me: Bridging the Long‑Range Gap in LVLMs with Three-Step Inference-Only Decay
+                </a>
+            </h3>
+            <p class="pub-authors">
+                Peng Gao*, Yujian Lee*, <strong class="author-self">Xiaofeng Zhang*✉</strong>, Zailong Chen, Hui Zhang
+            </p>
+            <p class="pub-venue">
+                <strong>AAAI 2026</strong> · Corresponding Author · <span class="venue-rank">CCF-A</span>
+            </p>
+            <div class="pub-actions">
+                <a href="https://arxiv.org/html/2511.09868v1" class="action-link" target="_blank" rel="noopener">📄 Arxiv</a>
+            </div>
+        </div>
+    </article>
+    
+    <div class="pub-separator"></div>
+    
+    <!-- Corresponding Paper 2 -->
+    <article class="pub-card">
+        <div class="pub-image">
+            <img src="./images/shuochen.png" alt="D3ToM" loading="lazy">
+        </div>
+        <div class="pub-content">
+            <h3 class="pub-title">
+                <a href="https://arxiv.org/html/2511.12280" target="_blank" rel="noopener">
+                    D3ToM: Decider-Guided Dynamic Token Merging for Accelerating Diffusion MLLMs
+                </a>
+            </h3>
+            <p class="pub-authors">
+                Shuochen Chang, <strong class="author-self">Xiaofeng Zhang*</strong>, Qingyang Liu, Li Niu*
+            </p>
+            <p class="pub-venue">
+                <strong>AAAI 2026</strong> · Project Leader · <span class="venue-rank">CCF-A</span>
+            </p>
+            <div class="pub-actions">
+                <a href="https://arxiv.org/html/2511.12280" class="action-link" target="_blank" rel="noopener">📄 Arxiv</a>
+                <a href="https://github.com/bcmi/D3ToM-Diffusion-MLLM" class="action-link" target="_blank" rel="noopener">💻 Code</a>
+            </div>
+        </div>
+    </article>
+    
+    <!-- 更多对应作者论文... -->
+    
+</section>
+
+<!-- ==================== Academic Impact ==================== -->
+<section>
+    <h2>📈 Academic Impact</h2>
+    <div class="impact-grid">
+        <div class="impact-card">
+            <div class="impact-icon">🎓</div>
+            <div class="impact-value">929</div>
+            <div class="impact-label">Google Scholar Citations</div>
+            <a href="https://scholar.google.com/citations?user=Y6Z5xQQAAAAJ" target="_blank" rel="noopener" class="impact-link">View Profile →</a>
+        </div>
+        <div class="impact-card">
+            <div class="impact-icon">📊</div>
+            <div class="impact-value">h-index: 8</div>
+            <div class="impact-label">Research Impact</div>
+            <div class="impact-chart">
+                <div class="chart-bar" style="height: 30%"></div>
+                <div class="chart-bar" style="height: 65%"></div>
+                <div class="chart-bar" style="height: 100%"></div>
+                <div class="chart-bar" style="height: 85%"></div>
+                <div class="chart-bar" style="height: 70%"></div>
+            </div>
+        </div>
+        <div class="impact-card">
+            <div class="impact-icon">🌍</div>
+            <div class="impact-value">12+</div>
+            <div class="impact-label">Global Collaborators</div>
+            <div class="collab-avatars">
+                <img src="./images/collab1.jpg" alt="Prof. Hao Tang" title="Prof. Hao Tang @ PKU" loading="lazy">
+                <img src="./images/collab2.jpg" alt="Dr. Chen Shen" title="Dr. Chen Shen @ Alibaba" loading="lazy">
+                <img src="./images/collab3.jpg" alt="Prof. Chaochen Gu" title="Prof. Chaochen Gu @ SJTU" loading="lazy">
+                <span class="collab-more">+9</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== Awards ==================== -->
+<section>
+    <h2>🏆 Awards</h2>
+    <ul class="awards-list">
+        <li><strong>2021:</strong> National Scholarship (Top 0.2% nationwide)</li>
+        <li><strong>2025:</strong> EMNLP Outstanding Paper Award (Oral)</li>
+        <li><strong>2025:</strong> NAACL Outstanding Paper Award (Oral)</li>
+        <li><strong>2024:</strong> ACM MM Best Paper Candidate</li>
+    </ul>
+</section>
+
+<!-- ==================== Services ==================== -->
+<section>
+    <h2>🔍 Professional Services</h2>
+    <div class="services-list">
+        <p><strong>Journal Reviewer:</strong></p>
+        <ul>
+            <li>IEEE TPAMI, IEEE TIP, IEEE TETCI, Information Processing & Management, Neural Networks</li>
+        </ul>
+        <p><strong>Conference Reviewer / PC Member:</strong></p>
+        <ul>
+            <li>ICML, NeurIPS, CVPR, ICLR, ICCV, AAAI, IJCAI, ACM MM, ACL, EMNLP, NAACL</li>
+        </ul>
+    </div>
+</section>
+
+<!-- ==================== Footer ==================== -->
+<footer class="page-footer">
+    <p>
+        © 2026 Xiaofeng Zhang · Last updated: March 2026 · 
+        Built with ❤️ and <a href="https://github.com/zhangbaijin" target="_blank" rel="noopener">clean code</a>
+    </p>
+    <p style="margin-top: 8px; font-size: 0.85rem;">
+        📧 framebreak@sjtu.edu.cn · 💬 WeChat: SemiZxf · 📍 Shanghai, China
+    </p>
+</footer>
+
+<!-- ==================== Back to Top Button ==================== -->
+<button id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
+
+</div> <!-- end #layout-content -->
+
+<!-- ==================== JavaScript ==================== -->
+<script>
+    // ===== 回到顶部按钮 =====
+    const backToTop = document.getElementById('backToTop');
+    
+    function toggleBackToTop() {
+        if (window.scrollY > 400) {
+            backToTop.classList.add('visible');
+        } else {
+            backToTop.classList.remove('visible');
+        }
+    }
+    
+    window.addEventListener('scroll', toggleBackToTop, { passive: true });
+    
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    
+    // 键盘可访问性
+    backToTop.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    });
+    
+    // ===== 摘要展开/收起 =====
+    document.querySelectorAll('.abstract-toggle').forEach(btn => {
+        function toggleAbstract(e) {
+            e?.preventDefault();
+            const card = btn.closest('.pub-card');
+            const abstract = card.querySelector('.pub-abstract');
+            const isExpanded = abstract.classList.toggle('expanded');
+            btn.textContent = isExpanded ? '[- collapse]' : '[+ expand]';
+        }
+        
+        btn.addEventListener('click', toggleAbstract);
+        btn.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                toggleAbstract(e);
+            }
+        });
+    });
+    
+    // ===== BibTeX 一键复制 =====
+    document.querySelectorAll('.bibtex-btn').forEach(btn => {
+        btn.addEventListener('click', async (e) => {
+            e.preventDefault();
+            const bibtex = btn.dataset.bibtex;
+            const originalText = btn.innerHTML;
+            
+            try {
+                await navigator.clipboard.writeText(bibtex);
+                btn.innerHTML = '✅ Copied!';
+                btn.style.background = 'rgba(39, 103, 73, 0.15)';
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.style.background = '';
+                }, 2000);
+            } catch (err) {
+                console.error('Copy failed:', err);
+                btn.innerHTML = '❌ Failed';
+                setTimeout(() => btn.innerHTML = originalText, 1500);
+            }
+        });
+    });
+    
+    // ===== 图片懒加载增强 =====
+    if ('loading' in HTMLImageElement.prototype) {
+        // 浏览器原生支持loading="lazy"
+        const images = document.querySelectorAll('img[loading="lazy"]');
+        images.forEach(img => {
+            img.src = img.dataset.src || img.src;
+        });
+    } else {
+        // 降级方案：Intersection Observer
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src || img.src;
+                    img.removeAttribute('loading');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+        document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+    
+    // ===== 控制台欢迎信息 =====
+    console.log('%c👋 Welcome to Xiaofeng Zhang\'s Homepage!', 'color: #2b6cb0; font-size: 16px; font-weight: bold;');
+    console.log('%c🔬 Research: Multimodal LLMs · Hallucination · Embodied AI', 'color: #4a5568; font-size: 13px;');
+    console.log('%c📧 Contact: framebreak@sjtu.edu.cn', 'color: #718096; font-size: 12px;');
+</script>
 
 </body>
 </html>
