@@ -1,5 +1,4 @@
 
-
 <!doctype html>
 <html lang="en" data-theme="light">
 <head>
@@ -174,12 +173,36 @@
     p { margin: 0 0 18px; }
     .intro p:last-child { margin-bottom: 0; }
 
-    .simple-list, .news-list, .bio-list, .award-list {
+    .simple-list, .bio-list, .award-list {
       margin: 0;
       padding-left: 38px;
     }
-    .simple-list li, .news-list li, .bio-list li, .award-list li { margin: 7px 0; padding-left: 2px; }
+    .simple-list li, .bio-list li, .award-list li { margin: 7px 0; padding-left: 2px; }
+
+    /* News: fixed-height scroll area to keep the homepage compact. */
+    .news-list {
+      max-height: 310px;
+      margin: 0;
+      padding: 4px 16px 4px 38px;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      scrollbar-gutter: stable;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      scrollbar-width: thin;
+      scrollbar-color: var(--muted) transparent;
+    }
+    .news-list li { margin: 7px 0; padding-left: 2px; }
     .news-list strong { color: var(--text); }
+    .news-list::-webkit-scrollbar { width: 7px; }
+    .news-list::-webkit-scrollbar-track { background: transparent; }
+    .news-list::-webkit-scrollbar-thumb {
+      background: color-mix(in srgb, var(--muted) 55%, transparent);
+      border-radius: 999px;
+    }
+    .news-list::-webkit-scrollbar-thumb:hover {
+      background: color-mix(in srgb, var(--muted) 78%, transparent);
+    }
 
     .publication-list {
       margin: 0;
@@ -259,7 +282,12 @@
       .sidebar-name { font-size: 16px; }
       .sidebar-role, .sidebar-links, .sidebar-quote { font-size: 12px; }
       h2 { font-size: 24px; }
-      .simple-list, .news-list, .bio-list, .award-list, .publication-list, .services-list ul { padding-left: 25px; }
+      .simple-list, .bio-list, .award-list, .publication-list, .services-list ul { padding-left: 25px; }
+      .news-list {
+        max-height: 260px;
+        padding-right: 10px;
+        padding-left: 25px;
+      }
       .publication-authors { margin-top: 8px; }
     }
   </style>
@@ -323,7 +351,7 @@
 
       <section id="news">
         <h2>News</h2>
-        <ul class="news-list">
+        <ul class="news-list" tabindex="0" aria-label="Latest news; scroll to view older items">
           <li><strong>4/2026:</strong> We have 7 paper (LVLM-hallucination, Diffusion-explainable, Cot-explainable, DPO, Diffusion-ROPE) accepted by <a href="https://2026.aclweb.org/" target="_blank">ACL 2026</a>, congratulations to Haomin Zuo, Ziqin Luo, Yihao Quan, Xiaoyu Xu, Ruixuan Xu, Yingnan Guo</li>
 <li><strong>2/2026:</strong> We have one paper (SOPE, 3D-LLM-ROPE) accepted by <a href="https://cvpr.thecvf.com/Conferences/2026" target="_blank">CVPR 2026</a>, congratulations to Guanting Ye!</li>
 <li><strong>2/2026:</strong> LVLMs-Saliency has been chosen as <a href="https://iclr.cc/Conferences/2026" target="_blank">ICLR 2026 Oral</a>!</li>
@@ -571,10 +599,6 @@
   </script>
 </body>
 </html>
-
-
-
-
 
 
 
