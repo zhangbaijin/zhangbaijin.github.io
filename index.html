@@ -1,12 +1,15 @@
-
 <!doctype html>
 <html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Xiaofeng Zhang's academic homepage — large vision-language models, multimodal reasoning, hallucination mitigation, and diffusion MLLMs.">
+  <meta name="description" content="Xiaofeng Zhang's academic homepage — large language models, multimodal reasoning, hallucination mitigation, and diffusion MLLMs.">
   <meta name="author" content="Xiaofeng Zhang">
   <meta name="theme-color" content="#ffffff">
+  <meta property="og:title" content="Xiaofeng Zhang's Homepage">
+  <meta property="og:description" content="Assistant Professor at Soochow University — large language models, multimodal reasoning, hallucination mitigation, and diffusion MLLMs.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23087f9c'/%3E%3Ctext x='32' y='42' font-family='Arial' font-size='30' font-weight='bold' fill='white' text-anchor='middle'%3EXZ%3C/text%3E%3C/svg%3E">
   <title>Xiaofeng Zhang's Homepage</title>
   <style>
     :root {
@@ -20,6 +23,8 @@
       --sidebar-bg: transparent;
       --badge-bg: #e4e4e4;
       --badge-text: #333333;
+      --highlight-bg: #eef7fa;
+      --highlight-line: #087f9c;
       --max-width: 1240px;
     }
 
@@ -34,6 +39,8 @@
       --sidebar-bg: transparent;
       --badge-bg: #686868;
       --badge-text: #ffffff;
+      --highlight-bg: rgba(8, 166, 199, .12);
+      --highlight-line: #08a6c7;
     }
 
     * { box-sizing: border-box; }
@@ -173,6 +180,15 @@
     p { margin: 0 0 18px; }
     .intro p:last-child { margin-bottom: 0; }
 
+    .collab-note {
+      margin: 0 0 18px;
+      padding: 10px 14px;
+      background: var(--highlight-bg);
+      border-left: 3px solid var(--highlight-line);
+      border-radius: 0 6px 6px 0;
+    }
+    .collab-note strong { color: var(--text); }
+
     .simple-list, .bio-list, .award-list {
       margin: 0;
       padding-left: 38px;
@@ -291,6 +307,7 @@
       .publication-authors { margin-top: 8px; }
     }
   </style>
+<base target="_blank">
 </head>
 <body>
   <header class="topbar">
@@ -298,7 +315,7 @@
       <a class="brand" href="#about">Xiaofeng Zhang's Homepage</a>
       <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
       <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#about">About me</a>
+        <a href="#about">About Me</a>
         <a href="#research">Research Interests</a>
         <a href="#news">News</a>
         <a href="#publications">Publications</a>
@@ -312,13 +329,14 @@
 
   <div class="page">
     <aside class="sidebar">
-      <img class="profile-photo" src="./images/yun.jpg" alt="Portrait of Xiaofeng Zhang">
+      <img class="profile-photo" src="./images/yun.jpg" alt="Portrait of Xiaofeng Zhang"
+           onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 172 232%22%3E%3Crect width=%22172%22 height=%22232%22 rx=%2286%22 fill=%22%23087f9c%22/%3E%3Ctext x=%2286%22 y=%22132%22 font-family=%22Arial%22 font-size=%2256%22 font-weight=%22bold%22 fill=%22white%22 text-anchor=%22middle%22%3EXZ%3C/text%3E%3C/svg%3E';">
       <div class="sidebar-meta">
         <h1 class="sidebar-name">Xiaofeng Zhang (张晓峰)</h1>
         <p class="sidebar-role">Assistant Professor at Soochow University</p>
         <div class="sidebar-links">
-          <span class="sidebar-link"><span class="sidebar-icon">●</span><span>China</span></span>
-          <a class="sidebar-link" href="https://www.sjtu.edu.cn/" target="_blank" rel="noopener"><span class="sidebar-icon">▦</span><span>Shanghai Jiao Tong University</span></a>
+          <span class="sidebar-link"><span class="sidebar-icon">●</span><span>Suzhou, China</span></span>
+          <a class="sidebar-link" href="https://www.suda.edu.cn/" target="_blank" rel="noopener"><span class="sidebar-icon">▦</span><span>Soochow University</span></a>
           <a class="sidebar-link" href="mailto:framebreak@sjtu.edu.cn"><span class="sidebar-icon">✉</span><span>Email</span></a>
           <a class="sidebar-link" href="https://scholar.google.co.jp/citations?hl=zh-CN&amp;user=Y6Z5xQQAAAAJ" target="_blank" rel="noopener"><span class="sidebar-icon">♙</span><span>Google Scholar</span></a>
           <a class="sidebar-link" href="https://github.com/zhangbaijin" target="_blank" rel="noopener"><span class="sidebar-icon">⌘</span><span>GitHub</span></a>
@@ -330,10 +348,9 @@
 
     <main>
       <section id="about" class="intro">
-        <h2>About me</h2>
-        <p>I will be a Assistant Professor at Soochow Uniersity, before that I received my Ph.D degree at <a href="https://www.sjtu.edu.cn/" target="_blank">Shanghai Jiao Tong University</a>. 
-    and I received my Master's degree from <a href="https://www.njupt.edu.cn/" target="_blank">Nanjing University of Posts and Telecommunications</a>. 
-    My current research focuses on large language models, on-policy distillation, and efficient multimodal reasoning.</p>
+        <h2>About Me</h2>
+        <p>I am an Assistant Professor at <a href="https://www.suda.edu.cn/" target="_blank" rel="noopener">Soochow University</a>. Before that, I received my Ph.D. degree from <a href="https://www.sjtu.edu.cn/" target="_blank" rel="noopener">Shanghai Jiao Tong University</a> and my Master's degree from <a href="https://www.njupt.edu.cn/" target="_blank" rel="noopener">Nanjing University of Posts and Telecommunications</a>. My current research focuses on large language models, on-policy distillation, and efficient multimodal reasoning.</p>
+        <p class="collab-note">I am currently collaborating closely with Prof. <a href="https://zhangmin-nlp-ai.github.io/cn_homepage/" target="_blank" rel="noopener"><strong>Min Zhang</strong></a> (ACL Fellow) and Prof. <a href="https://lijuntaopku.github.io/" target="_blank" rel="noopener"><strong>Juntao Li</strong></a> at Soochow University on large language models and multimodal intelligence.</p>
         <p>I study reliable and efficient multimodal intelligence, with a particular interest in understanding how visual information is represented, propagated, and degraded during complex reasoning.</p>
         <p>For research discussions or potential collaborations, please feel free to contact me via <a href="mailto:SemiZxf@163.com">SemiZxf@163.com</a>.</p>
       </section>
@@ -342,8 +359,8 @@
         <h2>Research Interests</h2>
         <ul class="simple-list">
           <li>Large Language Models</li>
-          <li>on-policy distillation</li>
-           <li>Self-evoling agent</li></li>
+          <li>On-Policy Distillation</li>
+          <li>Self-Evolving Agents</li>
           <li>Multimodal Reasoning and Information Flow</li>
           <li>Model Interpretability and Efficient Inference</li>
         </ul>
@@ -352,206 +369,204 @@
       <section id="news">
         <h2>News</h2>
         <ul class="news-list" tabindex="0" aria-label="Latest news; scroll to view older items">
-           <li><strong>9/2026:</strong>I service for a area chair for <a href="https://iclr.cc/Conferences/2027/" target="_blank">ICLR 2027</a></li>
-           <li><strong>9/2026:</strong> We have 2 paper (MLLM-GRPO，LLM-Inference Control) accepted by <a href="https://iclr.cc/Conferences/2027/" target="_blank">NeuriPS 2026</a>, congratulations to Xiaosong Yuan and Shuochen Chang!</li>
-            <li><strong>8/2026:</strong> We have 5 paper ( Diffusion-explainable, efficient reasoning) accepted by <a href="https://2026.aclweb.org/" target="_blank">EMNLP 2026</a>, congratulations to Yikai Zhao, Xingyou Fang, Yifei Bao, Sixun Liu</li>
-          <li><strong>4/2026:</strong> We have 7 paper (LVLM-hallucination, Diffusion-explainable, Cot-explainable, DPO, Diffusion-ROPE) accepted by <a href="https://2026.aclweb.org/" target="_blank">ACL 2026</a>, congratulations to Haomin Zuo, Ziqin Luo, Yihao Quan, Xiaoyu Xu, Ruixuan Xu, Yingnan Guo</li>
-<li><strong>2/2026:</strong> We have one paper (SOPE, 3D-LLM-ROPE) accepted by <a href="https://cvpr.thecvf.com/Conferences/2026" target="_blank">CVPR 2026</a>, congratulations to Guanting Ye!</li>
-<li><strong>2/2026:</strong> LVLMs-Saliency has been chosen as <a href="https://iclr.cc/Conferences/2026" target="_blank">ICLR 2026 Oral</a>!</li>
-<li><strong>1/2026:</strong> Three papers accepted by <a href="https://iclr.cc/Conferences/2026" target="_blank">ICLR 2026</a>, congratulations!</li>
-<li><strong>11/2025:</strong> Two papers accepted by <a href="https://aaai.org/conference/aaai/aaai-26/" target="_blank">AAAI 2026</a>, congratulations to Shuochen Chang and Peng Gao.</li>
-<li><strong>9/2025:</strong> One paper accepted by <a href="https://www.sciencedirect.com/journal/information-processing-and-management" target="_blank">IPM (中科院一区 Top)</a>.</li>
-<li><strong>9/2025:</strong> One paper (Spatial-R1) accepted by <a href="https://neurips.cc/Conferences/2025/" target="_blank">NeurIPS 2025</a>, congratulations to Yifan Shen and Yuanzhe Liu.</li>
-<li><strong>8/2025:</strong> One paper (EAH) accepted by <a href="https://2025.emnlp.org/" target="_blank">EMNLP 2025 Oral 🏆</a>, see you in Suzhou.</li>
-<li><strong>7/2025:</strong> One paper (MCA-LLaVA) accepted by <a href="https://acmmm2025.org/" target="_blank">ACM MM 2025</a>, congratulations to Qiyan Zhao.</li>
-<li><strong>6/2025:</strong> One paper (pCR Prediction in Breast Cancer) accepted by <a href="https://conferences.miccai.org/2025/en/default.asp" target="_blank">MICCAI 2025</a>, congratulations to Dingrui Ma.</li>
-<li><strong>6/2025:</strong> One paper (AdaToken-3D, VLM token pruning) accepted by <a href="https://iros25.org/" target="_blank">IROS 2025</a>, congratulations to Kai Zhang.</li>
-<li><strong>6/2025:</strong> One paper (Mural inpainting) accepted by <a href="https://dl.acm.org/journal/tomm" target="_blank">ACM TOMM</a>, congratulations to Zishan Xu.</li>
-<li><strong>5/2025:</strong> One paper (Image segmentation) accepted by <a href="https://icml.cc/Conferences/2025/" target="_blank">ICML 2025</a>, congratulations to Jiawei Cao.</li>
-<li><strong>4/2025:</strong> One paper (Image restoration) accepted by <a href="https://ijcai-25.org/" target="_blank">IJCAI 2025</a>, congratulations to Jiesong Bai.</li>
-<li><strong>1/2025:</strong> One paper (LLaVA-CAM) accepted by <a href="https://arxiv.org/html/2406.06579v3/" target="_blank">NAACL 2025 Oral 🏆</a>.</li>
-<li><strong>1/2025:</strong> One paper accepted by <a href="https://iclr.cc/Conferences/2025/" target="_blank">ICLR 2025</a>, congratulations to Sinan Fan.</li>
-<li><strong>1/2025:</strong> One paper (Wakeup-Darkness) accepted by <a href="https://mc.manuscriptcentral.com/tomm/" target="_blank">ACM TOMM</a>.</li>
-<li><strong>12/2024:</strong> One paper (SimIgnore) accepted by <a href="https://www.sciencedirect.com/journal/neural-networks" target="_blank">Neural Networks</a>.</li>
-<li><strong>12/2024:</strong> One paper accepted by <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=19" target="_blank">IEEE TIM</a>, congratulations to Jietao Yang.</li>
-<li><strong>12/2024:</strong> One paper accepted by <a href="https://aaai.org/conference/aaai/aaai-25/" target="_blank">AAAI 2025</a>.</li>
-<li><strong>10/2024:</strong> One paper accepted by <a href="https://wacv2025.thecvf.com/" target="_blank">WACV 2025</a>, congratulations to Yingtie Lei.</li>
-<li><strong>9/2024:</strong> One paper accepted by <a href="https://neurips.cc/Conferences/2024/" target="_blank">NeurIPS 2024</a>, congratulations to Xiaosong Yuan.</li>
-<li><strong>8/2024:</strong> One paper (DOPRA) accepted by <a href="https://2024.acmmm.org/" target="_blank">ACM MM 2024</a>.</li>
+          <li><strong>9/2026:</strong> I will serve as an Area Chair for <a href="https://iclr.cc/Conferences/2027/" target="_blank" rel="noopener">ICLR 2027</a>.</li>
+          <li><strong>9/2026:</strong> We have 2 papers (MLLM-GRPO, LLM-Inference Control) accepted by <a href="https://neurips.cc/Conferences/2026/" target="_blank" rel="noopener">NeurIPS 2026</a>. Congratulations to Xiaosong Yuan and Shuochen Chang!</li>
+          <li><strong>8/2026:</strong> We have 5 papers (Diffusion-explainable, Efficient Reasoning) accepted by <a href="https://2026.emnlp.org/" target="_blank" rel="noopener">EMNLP 2026</a>. Congratulations to Yikai Zhao, Xingyou Fang, Yifei Bao, and Sixun Liu!</li>
+          <li><strong>4/2026:</strong> We have 7 papers (LVLM-hallucination, Diffusion-explainable, CoT-explainable, DPO, Diffusion-ROPE) accepted by <a href="https://2026.aclweb.org/" target="_blank" rel="noopener">ACL 2026</a>. Congratulations to Haomin Zuo, Ziqin Luo, Yihao Quan, Xiaoyu Xu, Ruixuan Xu, and Yingnan Guo!</li>
+          <li><strong>2/2026:</strong> We have 2 papers (SOPE, 3D-LLM-ROPE) accepted by <a href="https://cvpr.thecvf.com/Conferences/2026" target="_blank" rel="noopener">CVPR 2026</a>. Congratulations to Guanting Ye!</li>
+          <li><strong>2/2026:</strong> LVLMs-Saliency has been selected as an <a href="https://iclr.cc/Conferences/2026" target="_blank" rel="noopener">ICLR 2026 Oral</a> presentation!</li>
+          <li><strong>1/2026:</strong> Three papers accepted by <a href="https://iclr.cc/Conferences/2026" target="_blank" rel="noopener">ICLR 2026</a>. Congratulations!</li>
+          <li><strong>11/2025:</strong> Two papers accepted by <a href="https://aaai.org/conference/aaai/aaai-26/" target="_blank" rel="noopener">AAAI 2026</a>. Congratulations to Shuochen Chang and Peng Gao!</li>
+          <li><strong>9/2025:</strong> One paper accepted by <a href="https://www.sciencedirect.com/journal/information-processing-and-management" target="_blank" rel="noopener">IPM (中科院一区 Top)</a>.</li>
+          <li><strong>9/2025:</strong> One paper (Spatial-R1) accepted by <a href="https://neurips.cc/Conferences/2025/" target="_blank" rel="noopener">NeurIPS 2025</a>. Congratulations to Yifan Shen and Yuanzhe Liu!</li>
+          <li><strong>8/2025:</strong> One paper (EAH) accepted by <a href="https://2025.emnlp.org/" target="_blank" rel="noopener">EMNLP 2025 Oral 🏆</a>. See you in Suzhou!</li>
+          <li><strong>7/2025:</strong> One paper (MCA-LLaVA) accepted by <a href="https://acmmm2025.org/" target="_blank" rel="noopener">ACM MM 2025</a>. Congratulations to Qiyan Zhao!</li>
+          <li><strong>6/2025:</strong> One paper (pCR Prediction in Breast Cancer) accepted by <a href="https://conferences.miccai.org/2025/en/default.asp" target="_blank" rel="noopener">MICCAI 2025</a>. Congratulations to Dingrui Ma!</li>
+          <li><strong>6/2025:</strong> One paper (AdaToken-3D, VLM token pruning) accepted by <a href="https://iros25.org/" target="_blank" rel="noopener">IROS 2025</a>. Congratulations to Kai Zhang!</li>
+          <li><strong>6/2025:</strong> One paper (Mural Inpainting) accepted by <a href="https://dl.acm.org/journal/tomm" target="_blank" rel="noopener">ACM TOMM</a>. Congratulations to Zishan Xu!</li>
+          <li><strong>5/2025:</strong> One paper (Image Segmentation) accepted by <a href="https://icml.cc/Conferences/2025/" target="_blank" rel="noopener">ICML 2025</a>. Congratulations to Jiawei Cao!</li>
+          <li><strong>4/2025:</strong> One paper (Image Restoration) accepted by <a href="https://ijcai-25.org/" target="_blank" rel="noopener">IJCAI 2025</a>. Congratulations to Jiesong Bai!</li>
+          <li><strong>1/2025:</strong> One paper (LLaVA-CAM) accepted by <a href="https://aclanthology.org/2025.naacl-long.319/" target="_blank" rel="noopener">NAACL 2025 Oral 🏆</a>.</li>
+          <li><strong>1/2025:</strong> One paper accepted by <a href="https://iclr.cc/Conferences/2025/" target="_blank" rel="noopener">ICLR 2025</a>. Congratulations to Sinan Fan!</li>
+          <li><strong>1/2025:</strong> One paper (Wakeup-Darkness) accepted by <a href="https://dl.acm.org/journal/tomm" target="_blank" rel="noopener">ACM TOMM</a>.</li>
+          <li><strong>12/2024:</strong> One paper (SimIgnore) accepted by <a href="https://www.sciencedirect.com/journal/neural-networks" target="_blank" rel="noopener">Neural Networks</a>.</li>
+          <li><strong>12/2024:</strong> One paper accepted by <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=19" target="_blank" rel="noopener">IEEE TIM</a>. Congratulations to Jietao Yang!</li>
+          <li><strong>12/2024:</strong> One paper accepted by <a href="https://aaai.org/conference/aaai/aaai-25/" target="_blank" rel="noopener">AAAI 2025</a>.</li>
+          <li><strong>10/2024:</strong> One paper accepted by <a href="https://wacv2025.thecvf.com/" target="_blank" rel="noopener">WACV 2025</a>. Congratulations to Yingtie Lei!</li>
+          <li><strong>9/2024:</strong> One paper accepted by <a href="https://neurips.cc/Conferences/2024/" target="_blank" rel="noopener">NeurIPS 2024</a>. Congratulations to Xiaosong Yuan!</li>
+          <li><strong>8/2024:</strong> One paper (DOPRA) accepted by <a href="https://2024.acmmm.org/" target="_blank" rel="noopener">ACM MM 2024</a>.</li>
         </ul>
       </section>
 
       <section id="publications">
         <h2>Publications</h2>
         <h3 class="subsection-title">First Author</h3>
-<ul class="publication-list">
-<li class="publication-item">
-          <div class="publication-heading">
-            <span class="venue">(ACL 2026)</span>
-            <a class="paper-title" href="https://aclanthology.org/2026.findings-acl.628.pdf" target="_blank" rel="noopener">TokenPenalty: Alleviating Attention Sink and Positional Decay in LVLMs</a>
-          </div>
-          <div class="publication-authors"><b>Xiaofeng Zhang</b>, Yuanchao Zhu, Qiyan Zhao, Xiaosong Yuan, Jiawei Cao, Xuhang Chen</div>
-          <div class="publication-links"><a class="badge badge-paper" href="https://aclanthology.org/2026.findings-acl.628/" target="_blank" rel="noopener">ACL</a></div>
-        </li>
-<li class="publication-item">
-          <div class="publication-heading">
-            <span class="venue venue-highlight">(ICLR 2026 Oral 🏆)</span>
-            <a class="paper-title" href="https://openreview.net/forum?id=sjnErRHXf3" target="_blank" rel="noopener">Hallucination Begins Where Saliency Drops</a>
-          </div>
-          <div class="publication-authors"><b>Xiaofeng Zhang</b>, Yuanchao Zhu, Chaochen Gu, Xiaosong Yuan, Qiyan Zhao, Jiawei Cao, Feilong Tang, Sinan Fan, Yaomin Shen, Chen Shen, Hao Tang</div>
-          <div class="publication-links"><a class="badge badge-paper" href="https://openreview.net/forum?id=sjnErRHXf3" target="_blank" rel="noopener">OpenReview</a><a class="badge badge-code" href="https://github.com/zhangbaijin/LVLMs-Saliency" target="_blank" rel="noopener">Code</a></div>
-        </li>
-<li class="publication-item">
-          <div class="publication-heading">
-            <span class="venue">(ICLR 2026)</span>
-            <a class="paper-title" href="https://openreview.net/forum?id=mOz9jVYxsD" target="_blank" rel="noopener">Context Tokens are Anchors: Understanding the Repetition Curse in Diffusion MLLMs from an Information Flow Perspective</a>
-          </div>
-          <div class="publication-authors">Qiyan Zhao*, <b>Xiaofeng Zhang*✉</b>, Shuochen Chang, Qianyu Chen, Xiaosong Yuan, Xuhang Chen, Luoqi Liu, Jiajun Zhang, Xu-Yao Zhang, Da-Han Wang</div>
-          <div class="publication-links"><a class="badge badge-paper" href="https://openreview.net/forum?id=mOz9jVYxsD" target="_blank" rel="noopener">OpenReview</a></div>
-        </li>
-<li class="publication-item">
-          <div class="publication-heading">
-            <span class="venue">(Information Processing &amp; Management)</span>
-            <a class="paper-title" href="https://www.sciencedirect.com/science/article/pii/S0306457325003723" target="_blank" rel="noopener">What Drives Attention Sinks? A Study of Massive Activations and Rotational Positional Encoding in Large Vision-Language Models</a>(中科院一区, CCF B)
-          </div>
-          <div class="publication-authors"><b>Xiaofeng Zhang</b>, Yuanchao Zhu, Chaochen Gu, Jiawei Cao, Hao Cheng, Kaijie Wu</div>
-          
-        </li>
-<li class="publication-item">
-          <div class="publication-heading">
-            <span class="venue venue-highlight">(EMNLP 2025 Oral 🏆)</span>
-            <a class="paper-title" href="https://arxiv.org/html/2411.09968v1" target="_blank" rel="noopener">Seeing Clearly by Layer Two: Enhancing Attention Heads to Alleviate Hallucination in LVLMs</a>
-          </div>
-          <div class="publication-authors"><b>Xiaofeng Zhang*</b>, Yihao Quan*, Chaochen Gu, Chen Shen, Xiaosong Yuan, Shaotian Yan, Jieping Ye</div>
-          <div class="publication-links"><a class="badge badge-paper" href="https://arxiv.org/html/2411.09968v1" target="_blank" rel="noopener">Arxiv</a><a class="badge badge-code" href="https://github.com/itsqyh/Shallow-Focus-Deep-Fixes" target="_blank" rel="noopener">Code</a></div>
-        </li>
-<li class="publication-item">
-          <div class="publication-heading">
-            <span class="venue venue-highlight">(NAACL 2025 Oral 🏆)</span>
-            <a class="paper-title" href="https://arxiv.org/html/2406.06579v3" target="_blank" rel="noopener">From Redundancy to Relevance: Information Flow in LVLMs Across Reasoning Tasks</a>
-          </div>
-          <div class="publication-authors"><b>Xiaofeng Zhang</b>, Yihao Quan, Chen Shen, Xiaosong Yuan, Shaotian Yan, Chaochen Gu, Hao Tang, Jieping Ye</div>
-          <div class="publication-links"><a class="badge badge-paper" href="https://arxiv.org/html/2406.06579v3" target="_blank" rel="noopener">arXiv</a><a class="badge badge-code" href="https://github.com/zhangbaijin/From-Redundancy-to-Relevance" target="_blank" rel="noopener">Code</a></div>
-        </li>
-<li class="publication-item">
-          <div class="publication-heading">
-            <span class="venue">(AAAI 2025)</span>
-            <a class="paper-title" href="https://ojs.aaai.org/index.php/AAAI/article/view/XXXXX" target="_blank" rel="noopener">Enhancing Multimodal Large Language Models Complex Reasoning via Similarity Computation</a>
-          </div>
-          <div class="publication-authors"><b>Xiaofeng Zhang✉</b>, Fanshuo Zeng, Yihao Quan, Zheng Hui, Jiawei Yao</div>
-          <div class="publication-links"><a class="badge badge-code" href="https://github.com/FanshuoZeng/Simignore" target="_blank" rel="noopener">Code</a></div>
-        </li>
-<li class="publication-item">
-          <div class="publication-heading">
-            <span class="venue">(Neural Network)</span>
-            <a class="paper-title" href="https://www.sciencedirect.com/science/article/XXXXX" target="_blank" rel="noopener">SimIgnore: Enhancing Multimodal Large Language Models Complex Reasoning via Similarity Computation</a> (中科院一区, CCF B)
-          </div>
-          <div class="publication-authors"><b>Xiaofeng Zhang</b>, Fanshuo Zeng, Chaochen Gu</div>
-          <div class="publication-links"><a class="badge badge-code" href="https://github.com/FanshuoZeng/Simignore" target="_blank" rel="noopener">Code</a></div>
-        </li>
-<li class="publication-item">
-          <div class="publication-heading">
-            <span class="venue">(ACM Transactions on Multimedia Computing, Communications)</span>
-            <a class="paper-title" href="https://ieeexplore.ieee.org/document/10440368" target="_blank" rel="noopener">Wakeup-Darkness: When Multimodal Meets Unsupervised Low-light Image Enhancement</a>(中科院二区, CCF B)
-          </div>
-          <div class="publication-authors"><b>Xiaofeng Zhang</b>, Zishan Xu, Hao Tang, Chaochen Gu, Wei Chen</div>
-          <div class="publication-links"><a class="badge badge-paper" href="https://ieeexplore.ieee.org/document/10440368" target="_blank" rel="noopener">IEEE Xplore</a><a class="badge badge-code" href="https://github.com/zhangbaijin/Wakeup-Darkness" target="_blank" rel="noopener">Code</a></div>
-        </li>
+        <ul class="publication-list">
+          <li class="publication-item">
+            <div class="publication-heading">
+              <span class="venue">(ACL 2026)</span>
+              <a class="paper-title" href="https://aclanthology.org/2026.findings-acl.628.pdf" target="_blank" rel="noopener">TokenPenalty: Alleviating Attention Sink and Positional Decay in LVLMs</a>
+            </div>
+            <div class="publication-authors"><b>Xiaofeng Zhang</b>, Yuanchao Zhu, Qiyan Zhao, Xiaosong Yuan, Jiawei Cao, Xuhang Chen</div>
+            <div class="publication-links"><a class="badge badge-paper" href="https://aclanthology.org/2026.findings-acl.628/" target="_blank" rel="noopener">ACL</a></div>
+          </li>
+          <li class="publication-item">
+            <div class="publication-heading">
+              <span class="venue venue-highlight">(ICLR 2026 Oral 🏆)</span>
+              <a class="paper-title" href="https://openreview.net/forum?id=sjnErRHXf3" target="_blank" rel="noopener">Hallucination Begins Where Saliency Drops</a>
+            </div>
+            <div class="publication-authors"><b>Xiaofeng Zhang</b>, Yuanchao Zhu, Chaochen Gu, Xiaosong Yuan, Qiyan Zhao, Jiawei Cao, Feilong Tang, Sinan Fan, Yaomin Shen, Chen Shen, Hao Tang</div>
+            <div class="publication-links"><a class="badge badge-paper" href="https://openreview.net/forum?id=sjnErRHXf3" target="_blank" rel="noopener">OpenReview</a><a class="badge badge-code" href="https://github.com/zhangbaijin/LVLMs-Saliency" target="_blank" rel="noopener">Code</a></div>
+          </li>
+          <li class="publication-item">
+            <div class="publication-heading">
+              <span class="venue">(ICLR 2026)</span>
+              <a class="paper-title" href="https://openreview.net/forum?id=mOz9jVYxsD" target="_blank" rel="noopener">Context Tokens are Anchors: Understanding the Repetition Curse in Diffusion MLLMs from an Information Flow Perspective</a>
+            </div>
+            <div class="publication-authors">Qiyan Zhao*, <b>Xiaofeng Zhang*✉</b>, Shuochen Chang, Qianyu Chen, Xiaosong Yuan, Xuhang Chen, Luoqi Liu, Jiajun Zhang, Xu-Yao Zhang, Da-Han Wang</div>
+            <div class="publication-links"><a class="badge badge-paper" href="https://openreview.net/forum?id=mOz9jVYxsD" target="_blank" rel="noopener">OpenReview</a></div>
+          </li>
+          <li class="publication-item">
+            <div class="publication-heading">
+              <span class="venue">(Information Processing &amp; Management)</span>
+              <a class="paper-title" href="https://www.sciencedirect.com/science/article/pii/S0306457325003723" target="_blank" rel="noopener">What Drives Attention Sinks? A Study of Massive Activations and Rotational Positional Encoding in Large Vision-Language Models</a> (中科院一区, CCF B)
+            </div>
+            <div class="publication-authors"><b>Xiaofeng Zhang</b>, Yuanchao Zhu, Chaochen Gu, Jiawei Cao, Hao Cheng, Kaijie Wu</div>
+          </li>
+          <li class="publication-item">
+            <div class="publication-heading">
+              <span class="venue venue-highlight">(EMNLP 2025 Oral 🏆)</span>
+              <a class="paper-title" href="https://arxiv.org/abs/2411.09968" target="_blank" rel="noopener">Seeing Clearly by Layer Two: Enhancing Attention Heads to Alleviate Hallucination in LVLMs</a>
+            </div>
+            <div class="publication-authors"><b>Xiaofeng Zhang*</b>, Yihao Quan*, Chaochen Gu, Chen Shen, Xiaosong Yuan, Shaotian Yan, Jieping Ye</div>
+            <div class="publication-links"><a class="badge badge-paper" href="https://arxiv.org/abs/2411.09968" target="_blank" rel="noopener">arXiv</a><a class="badge badge-code" href="https://github.com/itsqyh/Shallow-Focus-Deep-Fixes" target="_blank" rel="noopener">Code</a></div>
+          </li>
+          <li class="publication-item">
+            <div class="publication-heading">
+              <span class="venue venue-highlight">(NAACL 2025 Oral 🏆)</span>
+              <a class="paper-title" href="https://arxiv.org/abs/2406.06579" target="_blank" rel="noopener">From Redundancy to Relevance: Information Flow in LVLMs Across Reasoning Tasks</a>
+            </div>
+            <div class="publication-authors"><b>Xiaofeng Zhang</b>, Yihao Quan, Chen Shen, Xiaosong Yuan, Shaotian Yan, Chaochen Gu, Hao Tang, Jieping Ye</div>
+            <div class="publication-links"><a class="badge badge-paper" href="https://arxiv.org/abs/2406.06579" target="_blank" rel="noopener">arXiv</a><a class="badge badge-code" href="https://github.com/zhangbaijin/From-Redundancy-to-Relevance" target="_blank" rel="noopener">Code</a></div>
+          </li>
+          <li class="publication-item">
+            <div class="publication-heading">
+              <span class="venue">(AAAI 2025)</span>
+              <a class="paper-title" href="https://ojs.aaai.org/index.php/AAAI/article/view/XXXXX" target="_blank" rel="noopener">Enhancing Multimodal Large Language Models Complex Reasoning via Similarity Computation</a>
+            </div>
+            <div class="publication-authors"><b>Xiaofeng Zhang✉</b>, Fanshuo Zeng, Yihao Quan, Zheng Hui, Jiawei Yao</div>
+            <div class="publication-links"><a class="badge badge-code" href="https://github.com/FanshuoZeng/Simignore" target="_blank" rel="noopener">Code</a></div>
+          </li>
+          <li class="publication-item">
+            <div class="publication-heading">
+              <span class="venue">(Neural Networks)</span>
+              <a class="paper-title" href="https://www.sciencedirect.com/science/article/XXXXX" target="_blank" rel="noopener">SimIgnore: Enhancing Multimodal Large Language Models Complex Reasoning via Similarity Computation</a> (中科院一区, CCF B)
+            </div>
+            <div class="publication-authors"><b>Xiaofeng Zhang</b>, Fanshuo Zeng, Chaochen Gu</div>
+            <div class="publication-links"><a class="badge badge-code" href="https://github.com/FanshuoZeng/Simignore" target="_blank" rel="noopener">Code</a></div>
+          </li>
+          <li class="publication-item">
+            <div class="publication-heading">
+              <span class="venue">(ACM Transactions on Multimedia Computing, Communications, and Applications)</span>
+              <a class="paper-title" href="https://ieeexplore.ieee.org/document/10440368" target="_blank" rel="noopener">Wakeup-Darkness: When Multimodal Meets Unsupervised Low-light Image Enhancement</a> (中科院二区, CCF B)
+            </div>
+            <div class="publication-authors"><b>Xiaofeng Zhang</b>, Zishan Xu, Hao Tang, Chaochen Gu, Wei Chen</div>
+            <div class="publication-links"><a class="badge badge-paper" href="https://ieeexplore.ieee.org/document/10440368" target="_blank" rel="noopener">IEEE Xplore</a><a class="badge badge-code" href="https://github.com/zhangbaijin/Wakeup-Darkness" target="_blank" rel="noopener">Code</a></div>
+          </li>
+          <li class="publication-item">
+            <div class="publication-heading">
+              <span class="venue">(IEEE Transactions on Consumer Electronics)</span>
+              <a class="paper-title" href="https://arxiv.org/abs/2309.01377" target="_blank" rel="noopener">Shadeoff: A SAM-Integrated Diffusion Framework for High-Fidelity Shadow Removal</a> (中科院一区)
+            </div>
+            <div class="publication-authors"><b>Xiaofeng Zhang</b>, Tianyi Song, Aoduo Li, Yihang Dong, Zexiao Liang</div>
+          </li>
+          <li class="publication-item">
+            <div class="publication-heading">
+              <span class="venue">(IEEE Transactions on Consumer Electronics)</span>
+              <a class="paper-title" href="https://arxiv.org/abs/2309.01377" target="_blank" rel="noopener">Memory Augment is All You Need for Image Restoration</a> (中科院一区)
+            </div>
+            <div class="publication-authors"><b>Xiaofeng Zhang</b>, Chaochen Gu, Shanying Zhu</div>
+            <div class="publication-links"><a class="badge badge-paper" href="https://arxiv.org/abs/2309.01377" target="_blank" rel="noopener">arXiv</a><a class="badge badge-code" href="https://github.com/zhangbaijin/MemoryNet" target="_blank" rel="noopener">Code</a></div>
+          </li>
+        </ul>
 
-<li class="publication-item">
-          <div class="publication-heading">
-            <span class="venue">(IEEE Transactions on Consumer Electronics)</span>
-            <a class="paper-title" href="https://arxiv.org/abs/2309.01377" target="_blank" rel="noopener">Shadeoff: A SAM-Integrated Diffusion Framework for High-Fidelity Shadow Removal</a>(中科院一区)
-          </div>
-          <div class="publication-authors"><b>Xiaofeng Zhang</b>,Tianyi Song, Aoduo Li, Yihang Dong, Zexiao Liang</div>
-       
-        </li>
-  
-<li class="publication-item">
-          <div class="publication-heading">
-            <span class="venue">(IEEE Transactions on Consumer Electronics)</span>
-            <a class="paper-title" href="https://arxiv.org/abs/2309.01377" target="_blank" rel="noopener">Memory Augment is All You Need for Image Restoration</a>(中科院一区)
-          </div>
-          <div class="publication-authors"><b>Xiaofeng Zhang</b>, Chaochen Gu, Shanying Zhu</div>
-          <div class="publication-links"><a class="badge badge-paper" href="https://arxiv.org/abs/2309.01377" target="_blank" rel="noopener">arXiv</a><a class="badge badge-code" href="https://github.com/zhangbaijin/MemoryNet" target="_blank" rel="noopener">Code</a></div>
-        </li>
-</ul>
-<h3 class="subsection-title">Corresponding Author / Project Lead</h3>
-<ul class="publication-list">
-<li class="publication-item">
-          <div class="publication-heading">
-            <span class="venue">(ACL 2026 main, corresponding author)</span>
-            <a class="paper-title" href="https://arxiv.org/html/2604.06695v1" target="_blank" rel="noopener">Reasoning Fails Where Step Flow Breaks</a>
-          </div>
-          <div class="publication-authors">Xiaoyu Xu, Yulan Pan, Xiaosong Yuan, <b>Xiaofeng Zhang✉</b></div>
-          <div class="publication-links"><a class="badge badge-paper" href="https://arxiv.org/abs/2604.06695" target="_blank" rel="noopener">Arxiv</a><a class="badge badge-code" href="https://github.com/XiaoyuXu-Vincent/step-saliency" target="_blank" rel="noopener">Code</a></div>
-        </li>
-<li class="publication-item">
-          <div class="publication-heading">
-            <span class="venue">(ACL 2026 main, corresponding author)</span>
-            <a class="paper-title" href="https://arxiv.org/abs/2604.11005" target="_blank" rel="noopener">Diffusion-CAM: Faithful Visual Explanations for dMLLMs</a>
-          </div>
-          <div class="publication-authors">Haomin Zuo, Yidi Li, Luoxiao Yang, <b>Xiaofeng Zhang✉</b></div>
-          <div class="publication-links"><a class="badge badge-paper" href="https://arxiv.org/abs/2604.11005" target="_blank" rel="noopener">Arxiv</a><a class="badge badge-code" href="https://github.com/ZzzzzZhhmm/Diffusion-CAM/" target="_blank" rel="noopener">Code</a></div>
-        </li>
-<li class="publication-item">
-          <div class="publication-heading">
-            <span class="venue">(ACL 2026 Finding, corresponding author)</span>
-            <a class="paper-title" href="https://arxiv.org/html/2511.09868v1" target="_blank" rel="noopener">Fixing Semantic Blind Spots in Anchor Tokens of dMLLMs</a>
-          </div>
-          <div class="publication-authors">Ruixuan Xu, Jiexi Xu, Qiyan Zhao,<b>Xiaofeng Zhang✉</b></div>
-          <div class="publication-links"><a class="badge badge-paper" href="https://aclanthology.org/2026.findings-acl.966.pdf" target="_blank" rel="noopener">Arxiv</a></div>
-        </li>
-<li class="publication-item">
-          <div class="publication-heading">
-            <span class="venue">(ACL 2026 main, corresponding author)</span>
-            <a class="paper-title" href="https://arxiv.org/html/2604.06393v1" target="_blank" rel="noopener">ART: Attention Replacement Technique to Improve Factuality in LLMs</a>
-          </div>
-          <div class="publication-authors">Ziqin Luo*, Yihao Quan*, <b>Xiaofeng Zhang*✉</b>, Xiaosong Yuan, Chen Shen</div>
-          <div class="publication-links"><a class="badge badge-paper" href="https://aclanthology.org/2026.acl-long.1571/" target="_blank" rel="noopener">Arxiv</a><a class="badge badge-code" href="https://github.com/lzqv5/ART" target="_blank" rel="noopener">Code</a></div>
-        </li>
-<li class="publication-item">
-          <div class="publication-heading">
-            <span class="venue">(AAAI 2026, corresponding author)</span>
-            <a class="paper-title" href="https://arxiv.org/html/2511.09868v1" target="_blank" rel="noopener">Remember Me: Bridging the Long‑Range Gap in LVLMs with Three-Step Inference-Only Decay Resilience Strategies</a>
-          </div>
-          <div class="publication-authors">Peng Gao*, Yujian Lee*, <b>Xiaofeng Zhang*✉</b>, Zailong Chen, Hui Zhang</div>
-          <div class="publication-links"><a class="badge badge-paper" href="https://arxiv.org/html/2511.09868v1" target="_blank" rel="noopener">Arxiv</a></div>
-        </li>
-<li class="publication-item">
-          <div class="publication-heading">
-            <span class="venue">(AAAI 2026, project leader)</span>
-            <a class="paper-title" href="https://arxiv.org/html/2511.12280" target="_blank" rel="noopener">D3ToM: Decider-Guided Dynamic Token Merging for Accelerating Diffusion MLLMs</a>
-          </div>
-          <div class="publication-authors">Shuochen Chang, <b>Xiaofeng Zhang*</b>, Qingyang Liu, Li Niu*</div>
-          <div class="publication-links"><a class="badge badge-paper" href="https://arxiv.org/html/2511.12280" target="_blank" rel="noopener">Arxiv</a><a class="badge badge-code" href="https://github.com/bcmi/D3ToM-Diffusion-MLLM" target="_blank" rel="noopener">Code</a></div>
-        </li>
-<li class="publication-item">
-          <div class="publication-heading">
-            <span class="venue">(ACM MM 2025 (corresponding author / project leader))</span>
-            <a class="paper-title" href="https://arxiv.org/abs/2507.09184" target="_blank" rel="noopener">MCA-LLaVA: Manhattan Causal Attention for Reducing Hallucination in Large Vision-Language Models</a>
-          </div>
-          <div class="publication-authors">Qiyan Zhao*, <b>Xiaofeng Zhang*✉</b>, Yiheng Li, Yun Xing, Xiaosong Yuan, Feilong Tang, Sinan Fan, Xuhang Chen</div>
-          <div class="publication-links"><a class="badge badge-paper" href="https://arxiv.org/abs/2507.09184" target="_blank" rel="noopener">Arxiv</a><a class="badge badge-code" href="https://github.com/ErikZ719/MCA-LLaVA" target="_blank" rel="noopener">Code</a></div>
-        </li>
-<li class="publication-item">
-          <div class="publication-heading">
-            <span class="venue ">(ACM MM 2024 (corresponding author / project leader))</span>
-            <a class="paper-title" href="https://arxiv.org/abs/2407.15130" target="_blank" rel="noopener">DOPRA: Decoding Over-accumulation Penalization and Re-allocation in Specific Weighting Layer</a>
-          </div>
-          <div class="publication-authors">Jingfeng Wei*, <b>Xiaofeng Zhang*✉</b></div>
-          <div class="publication-links"><a class="badge badge-paper" href="https://arxiv.org/abs/2407.15130" target="_blank" rel="noopener">arXiv</a></div>
-        </li>
-</ul>
+        <h3 class="subsection-title">Corresponding Author / Project Lead</h3>
+        <ul class="publication-list">
+          <li class="publication-item">
+            <div class="publication-heading">
+              <span class="venue">(ACL 2026 Main, Corresponding Author)</span>
+              <a class="paper-title" href="https://arxiv.org/abs/2604.06695" target="_blank" rel="noopener">Reasoning Fails Where Step Flow Breaks</a>
+            </div>
+            <div class="publication-authors">Xiaoyu Xu, Yulan Pan, Xiaosong Yuan, <b>Xiaofeng Zhang✉</b></div>
+            <div class="publication-links"><a class="badge badge-paper" href="https://arxiv.org/abs/2604.06695" target="_blank" rel="noopener">arXiv</a><a class="badge badge-code" href="https://github.com/XiaoyuXu-Vincent/step-saliency" target="_blank" rel="noopener">Code</a></div>
+          </li>
+          <li class="publication-item">
+            <div class="publication-heading">
+              <span class="venue">(ACL 2026 Main, Corresponding Author)</span>
+              <a class="paper-title" href="https://arxiv.org/abs/2604.11005" target="_blank" rel="noopener">Diffusion-CAM: Faithful Visual Explanations for dMLLMs</a>
+            </div>
+            <div class="publication-authors">Haomin Zuo, Yidi Li, Luoxiao Yang, <b>Xiaofeng Zhang✉</b></div>
+            <div class="publication-links"><a class="badge badge-paper" href="https://arxiv.org/abs/2604.11005" target="_blank" rel="noopener">arXiv</a><a class="badge badge-code" href="https://github.com/ZzzzzZhhmm/Diffusion-CAM/" target="_blank" rel="noopener">Code</a></div>
+          </li>
+          <li class="publication-item">
+            <div class="publication-heading">
+              <span class="venue">(ACL 2026 Findings, Corresponding Author)</span>
+              <a class="paper-title" href="https://aclanthology.org/2026.findings-acl.966/" target="_blank" rel="noopener">Fixing Semantic Blind Spots in Anchor Tokens of dMLLMs</a>
+            </div>
+            <div class="publication-authors">Ruixuan Xu, Jiexi Xu, Qiyan Zhao, <b>Xiaofeng Zhang✉</b></div>
+            <div class="publication-links"><a class="badge badge-paper" href="https://aclanthology.org/2026.findings-acl.966/" target="_blank" rel="noopener">ACL</a></div>
+          </li>
+          <li class="publication-item">
+            <div class="publication-heading">
+              <span class="venue">(ACL 2026 Main, Corresponding Author)</span>
+              <a class="paper-title" href="https://arxiv.org/abs/2604.06393" target="_blank" rel="noopener">ART: Attention Replacement Technique to Improve Factuality in LLMs</a>
+            </div>
+            <div class="publication-authors">Ziqin Luo*, Yihao Quan*, <b>Xiaofeng Zhang*✉</b>, Xiaosong Yuan, Chen Shen</div>
+            <div class="publication-links"><a class="badge badge-paper" href="https://aclanthology.org/2026.acl-long.1571/" target="_blank" rel="noopener">ACL</a><a class="badge badge-code" href="https://github.com/lzqv5/ART" target="_blank" rel="noopener">Code</a></div>
+          </li>
+          <li class="publication-item">
+            <div class="publication-heading">
+              <span class="venue">(AAAI 2026, Corresponding Author)</span>
+              <a class="paper-title" href="https://arxiv.org/abs/2511.09868" target="_blank" rel="noopener">Remember Me: Bridging the Long-Range Gap in LVLMs with Three-Step Inference-Only Decay Resilience Strategies</a>
+            </div>
+            <div class="publication-authors">Peng Gao*, Yujian Lee*, <b>Xiaofeng Zhang*✉</b>, Zailong Chen, Hui Zhang</div>
+            <div class="publication-links"><a class="badge badge-paper" href="https://arxiv.org/abs/2511.09868" target="_blank" rel="noopener">arXiv</a></div>
+          </li>
+          <li class="publication-item">
+            <div class="publication-heading">
+              <span class="venue">(AAAI 2026, Project Lead)</span>
+              <a class="paper-title" href="https://arxiv.org/abs/2511.12280" target="_blank" rel="noopener">D3ToM: Decider-Guided Dynamic Token Merging for Accelerating Diffusion MLLMs</a>
+            </div>
+            <div class="publication-authors">Shuochen Chang, <b>Xiaofeng Zhang*</b>, Qingyang Liu, Li Niu*</div>
+            <div class="publication-links"><a class="badge badge-paper" href="https://arxiv.org/abs/2511.12280" target="_blank" rel="noopener">arXiv</a><a class="badge badge-code" href="https://github.com/bcmi/D3ToM-Diffusion-MLLM" target="_blank" rel="noopener">Code</a></div>
+          </li>
+          <li class="publication-item">
+            <div class="publication-heading">
+              <span class="venue">(ACM MM 2025, Corresponding Author / Project Lead)</span>
+              <a class="paper-title" href="https://arxiv.org/abs/2507.09184" target="_blank" rel="noopener">MCA-LLaVA: Manhattan Causal Attention for Reducing Hallucination in Large Vision-Language Models</a>
+            </div>
+            <div class="publication-authors">Qiyan Zhao*, <b>Xiaofeng Zhang*✉</b>, Yiheng Li, Yun Xing, Xiaosong Yuan, Feilong Tang, Sinan Fan, Xuhang Chen</div>
+            <div class="publication-links"><a class="badge badge-paper" href="https://arxiv.org/abs/2507.09184" target="_blank" rel="noopener">arXiv</a><a class="badge badge-code" href="https://github.com/ErikZ719/MCA-LLaVA" target="_blank" rel="noopener">Code</a></div>
+          </li>
+          <li class="publication-item">
+            <div class="publication-heading">
+              <span class="venue">(ACM MM 2024, Corresponding Author / Project Lead)</span>
+              <a class="paper-title" href="https://arxiv.org/abs/2407.15130" target="_blank" rel="noopener">DOPRA: Decoding Over-accumulation Penalization and Re-allocation in Specific Weighting Layer</a>
+            </div>
+            <div class="publication-authors">Jingfeng Wei*, <b>Xiaofeng Zhang*✉</b></div>
+            <div class="publication-links"><a class="badge badge-paper" href="https://arxiv.org/abs/2407.15130" target="_blank" rel="noopener">arXiv</a></div>
+          </li>
+        </ul>
       </section>
 
       <section id="biography">
         <h2>Biography</h2>
         <ul class="bio-list">
-          <li><strong>2022.09 – 2026.09:</strong> Ph.D. student at Shanghai Jiao Tong University, supervised by Prof. <a href="https://automation.sjtu.edu.cn/Chao-Chen/" target="_blank">Chaochen Gu</a> and Prof. <a href="https://scholar.google.co.jp/citations?user=9zJkeEMAAAAJ&amp;hl=zh-CN" target="_blank">Hao Tang</a>.</li>
-<li><strong>2024.01 – 2025.07:</strong> Research Intern at Alibaba Tongyi (通义实验室), supervised by Dr. <a href="https://scholar.google.co.jp/citations?user=b6vn1uMAAAAJ&amp;hl=zh-CN" target="_blank">Chen Shen</a>.</li>
-<li><strong>2021.09 – 2022.09:</strong> Product Manager at China Mobile Communications Group Jiangsu Co., Ltd. (Wuxi Branch).</li>
-<li><strong>2014.09 – 2021.06:</strong> B.Eng. & M.Eng. at <a href="https://www.njupt.edu.cn/" target="_blank">Nanjing University of Posts and Telecommunications</a>.</li>
+          <li><strong>2026.10 – Present:</strong> Assistant Professor at <a href="https://www.suda.edu.cn/" target="_blank" rel="noopener">Soochow University</a>, collaborating with Prof. <a href="https://zhangmin-nlp-ai.github.io/cn_homepage/" target="_blank" rel="noopener">Min Zhang</a> and Prof. <a href="https://lijuntaopku.github.io/" target="_blank" rel="noopener">Juntao Li</a>.</li>
+          <li><strong>2022.09 – 2026.09:</strong> Ph.D. student at Shanghai Jiao Tong University, supervised by Prof. <a href="https://automation.sjtu.edu.cn/Chao-Chen/" target="_blank" rel="noopener">Chaochen Gu</a> and Prof. <a href="https://scholar.google.co.jp/citations?user=9zJkeEMAAAAJ&amp;hl=zh-CN" target="_blank" rel="noopener">Hao Tang</a>.</li>
+          <li><strong>2024.01 – 2025.07:</strong> Research Intern at Alibaba Tongyi (通义实验室), supervised by Dr. <a href="https://scholar.google.co.jp/citations?user=b6vn1uMAAAAJ&amp;hl=zh-CN" target="_blank" rel="noopener">Chen Shen</a>.</li>
+          <li><strong>2021.09 – 2022.09:</strong> Product Manager at China Mobile Communications Group Jiangsu Co., Ltd. (Wuxi Branch).</li>
+          <li><strong>2014.09 – 2021.06:</strong> B.Eng. &amp; M.Eng. at <a href="https://www.njupt.edu.cn/" target="_blank" rel="noopener">Nanjing University of Posts and Telecommunications</a>.</li>
         </ul>
       </section>
 
@@ -564,13 +579,12 @@
 
       <section id="services" class="services-list">
         <h2>Services</h2>
-        
-<p><strong>Invited Reviewer for:</strong></p>
-<ul>
-<li><strong>Journals:</strong> TPAMI, TIP, TETCI, IPM, Neural Networks, IEEE TCE</li>
-<li><strong>Conferences:</strong> ICML, NeurIPS, CVPR, ICLR, ICCV, AAAI, IJCAI, ACM MM, ACL, EMNLP, NAACL</li>
-</ul>
-
+        <p><strong>Area Chair:</strong> ICLR 2027</p>
+        <p><strong>Invited Reviewer for:</strong></p>
+        <ul>
+          <li><strong>Journals:</strong> TPAMI, TIP, TETCI, IPM, Neural Networks, IEEE TCE</li>
+          <li><strong>Conferences:</strong> ICML, NeurIPS, CVPR, ICLR, ICCV, AAAI, IJCAI, ACM MM, ACL, EMNLP, NAACL</li>
+        </ul>
       </section>
 
       <footer class="footer">
@@ -585,6 +599,15 @@
       const themeButton = document.querySelector('.theme-toggle');
       const menuButton = document.querySelector('.menu-toggle');
       const nav = document.querySelector('.nav-links');
+
+      // Restore saved theme, falling back to the OS preference.
+      const savedTheme = (() => { try { return localStorage.getItem('theme'); } catch (e) { return null; } })();
+      if (savedTheme === 'dark' || savedTheme === 'light') {
+        root.dataset.theme = savedTheme;
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        root.dataset.theme = 'dark';
+      }
+
       const updateThemeIcon = () => {
         themeButton.textContent = root.dataset.theme === 'dark' ? '☀' : '☾';
       };
@@ -592,6 +615,7 @@
 
       themeButton.addEventListener('click', () => {
         root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        try { localStorage.setItem('theme', root.dataset.theme); } catch (e) {}
         updateThemeIcon();
       });
 
@@ -612,8 +636,5 @@
   </script>
 </body>
 </html>
-
-
-
 
 
